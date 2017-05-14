@@ -1,5 +1,5 @@
 ---
-title: 搭建hexo＋github静态网页博客的五分钟教程
+title: mac下搭建hexo＋github静态网页博客的五分钟教程
 date: 2017-05-9 11:22:18
 categories: web
 

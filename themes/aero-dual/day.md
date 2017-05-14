@@ -2,7 +2,7 @@
 layout: post
 title: really tired day
 date: 2017-05-10 00:38:20
-categories: writing
+categories: 日记
 tags:
      - nothing
      - thinking
