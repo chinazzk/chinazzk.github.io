@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="github,hexo," />
+  <meta name="keywords" content="hexo,github," />
 
 
 
@@ -93,13 +93,13 @@
 
 
 <meta name="description" content="目前有两台终端，分别是电脑A(Mac)电脑B(Win10)。已经在电脑A(Mac)下搭建好Hexo+GitHub的博客,现在要在电脑B(Win10)下搭建同样的环境进行同步更新。 ###1 电脑B(win10)下搭建hexo参考帖子：Windows下用Hexo+GithubPage搭建博客)按照以上教程在window下安装1)e.js 2)Git 3) 配置SSH Key 4)安装Hexo   #">
-<meta name="keywords" content="github,hexo">
+<meta name="keywords" content="hexo,github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mac与win10两台电脑同步更新静态网页博客">
 <meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2017/05/14/post1/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
 <meta property="og:description" content="目前有两台终端，分别是电脑A(Mac)电脑B(Win10)。已经在电脑A(Mac)下搭建好Hexo+GitHub的博客,现在要在电脑B(Win10)下搭建同样的环境进行同步更新。 ###1 电脑B(win10)下搭建hexo参考帖子：Windows下用Hexo+GithubPage搭建博客)按照以上教程在window下安装1)e.js 2)Git 3) 配置SSH Key 4)安装Hexo   #">
-<meta property="og:updated_time" content="2017-05-14T12:51:20.720Z">
+<meta property="og:updated_time" content="2017-05-14T13:00:24.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac与win10两台电脑同步更新静态网页博客">
 <meta name="twitter:description" content="目前有两台终端，分别是电脑A(Mac)电脑B(Win10)。已经在电脑A(Mac)下搭建好Hexo+GitHub的博客,现在要在电脑B(Win10)下搭建同样的环境进行同步更新。 ###1 电脑B(win10)下搭建hexo参考帖子：Windows下用Hexo+GithubPage搭建博客)按照以上教程在window下安装1)e.js 2)Git 3) 配置SSH Key 4)安装Hexo   #">
@@ -395,7 +395,7 @@
       
         <p>目前有两台终端，分别是电脑A(Mac)电脑B(Win10)。已经在电脑A(Mac)下搭建好Hexo+GitHub的博客,现在要在电脑B(Win10)下搭建同样的环境进行同步更新。</p>
 <p>###1 电脑B(win10)下搭建hexo<br>参考帖子：<a href="[http://blog.csdn.net/wx_jin/article/details/51027783](http://blog.csdn.net/wx_jin/article/details/51027783">Windows下用Hexo+GithubPage搭建博客</a>)<br>按照以上教程在window下安装1)e.js 2)Git 3) 配置SSH Key 4)安装Hexo  </p>
-<p>###2 A电脑备份博客内容及配置到GitHub<br>2.1 配置.gitignore文件<br>通过该文件添加不需要备份的文件夹或文件目录，在Mac下该文件默认是隐藏的，在终端中输入以下命令显示隐藏<br>    defaults write com.apple.finder AppleShowAllFiles -bool true<br>操作结束后，建议重新进行隐藏，命令如下<br>    defaults write com.apple.finder AppleShowAllFiles -bool false<br>进入博客目录文件夹下，找到此文件，用文本编辑器打开，在最后增加两行内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">2.2 初始化仓库并同步到远程  </div><div class="line">在博客根目录下，输入以下命令：  </div><div class="line">	</div><div class="line">	git init  //初始化本地仓库，建立```.git```文件夹(注意该文件夹默认为隐藏文件夹)</div><div class="line">	git add . //添加备份的文件</div><div class="line">	git commit -m &quot;Blog Source Hexo&quot;</div><div class="line">	git branch hexo  //新建hexo分支	</div><div class="line">	git checkout hexo  //切换到hexo分支上</div><div class="line">	git remote add origin git@github.com:yourname/yourname.github.io.git  //将本地与Github项目对接</div><div class="line">	git push origin hexo  //push到Github项目的hexo分支上  </div><div class="line">### 3 B电脑中下拉远程仓库文件及更新博客  </div><div class="line">将博客根目录下的初始文件夹及文件删除，然后右击博客根目录，打开git bush,在git bush中执行以下命令  </div><div class="line">	</div><div class="line">	git clone -b hexo  https://github.com/username/username.github.io  //将Github中hexo分支clone到本地</div><div class="line">	cd  yourname.github.io  //切换到刚刚clone的文件夹内</div><div class="line">	npm install    //注意，这里一定要切换到刚刚clone的文件夹内执行，安装必要的所需组件，不用再init  </div><div class="line">到这里B电脑中的环境已经搭建完成。接下来是更新博客。  </div><div class="line">	</div><div class="line">	hexo new post &quot;new blog name&quot;   //新建一个.md文件，并编辑完成自己的博客内容</div><div class="line">	git add source  //之后若不更改配置，每次只要更新sorcerer中的文件到Github中即可</div><div class="line">	git commit -m &quot;XX&quot;</div><div class="line">	git push origin hexo  //更新分支</div><div class="line">	hexo g</div><div class="line">	hexo d  </div><div class="line">到这里，就完成了在B电脑中更新博客，再回到A电脑中更新博客，在博客根目录下，终端中输入以下命令  </div><div class="line">	</div><div class="line">	git pull origin hexo  //先pull完成本地与远端的融合</div><div class="line">	hexo new post &quot; new blog name&quot;</div><div class="line">	git add source</div><div class="line">	git commit -m &quot;XX&quot;</div><div class="line">	git push origin hexo</div><div class="line">	hexo clean</div><div class="line">	hexo g</div><div class="line">	hexo d  </div><div class="line">若推送失败可以尝试强制推送：```git push origin hexo -f</div></pre></td></tr></table></figure></p>
+<p>###2 A电脑备份博客内容及配置到GitHub<br>2.1 配置.gitignore文件<br>通过该文件添加不需要备份的文件夹或文件目录，在Mac下该文件默认是隐藏的，在终端中输入以下命令显示隐藏<br>    <figure class="highlight plain"><figcaption><span>write com.apple.finder AppleShowAllFiles -bool true```   </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">操作结束后，建议重新进行隐藏，命令如下  </div><div class="line">	```defaults write com.apple.finder AppleShowAllFiles -bool false```  </div><div class="line">进入博客目录文件夹下，找到此文件，用文本编辑器打开，在最后增加两行内容  </div><div class="line">```/.deploy_git```和```/public```  </div><div class="line">2.2 初始化仓库并同步到远程  </div><div class="line">在博客根目录下，输入以下命令：  </div><div class="line">	</div><div class="line">	git init  //初始化本地仓库，建立```.git```文件夹(注意该文件夹默认为隐藏文件夹)</div><div class="line">	git add . //添加备份的文件</div><div class="line">	git commit -m &quot;Blog Source Hexo&quot;</div><div class="line">	git branch hexo  //新建hexo分支	</div><div class="line">	git checkout hexo  //切换到hexo分支上</div><div class="line">	git remote add origin git@github.com:yourname/yourname.github.io.git  //将本地与Github项目对接</div><div class="line">	git push origin hexo  //push到Github项目的hexo分支上  </div><div class="line">	</div><div class="line">### 3 B电脑中下拉远程仓库文件及更新博客  </div><div class="line">将博客根目录下的初始文件夹及文件删除，然后右击博客根目录，打开git bush,在git bush中执行以下命令  </div><div class="line">	</div><div class="line">	git clone -b hexo  https://github.com/username/username.github.io  //将Github中hexo分支clone到本地</div><div class="line">	cd  yourname.github.io  //切换到刚刚clone的文件夹内</div><div class="line">	npm install    //注意，这里一定要切换到刚刚clone的文件夹内执行，安装必要的所需组件，不用再init  </div><div class="line">到这里B电脑中的环境已经搭建完成。接下来是更新博客。  </div><div class="line">	</div><div class="line">	hexo new post &quot;new blog name&quot;   //新建一个.md文件，并编辑完成自己的博客内容</div><div class="line">	git add source  //之后若不更改配置，每次只要更新sorcerer中的文件到Github中即可</div><div class="line">	git commit -m &quot;XX&quot;</div><div class="line">	git push origin hexo  //更新分支</div><div class="line">	hexo g</div><div class="line">	hexo d  </div><div class="line">到这里，就完成了在B电脑中更新博客，再回到A电脑中更新博客，在博客根目录下，终端中输入以下命令  </div><div class="line">	</div><div class="line">	git pull origin hexo  //先pull完成本地与远端的融合</div><div class="line">	hexo new post &quot; new blog name&quot;</div><div class="line">	git add source</div><div class="line">	git commit -m &quot;XX&quot;</div><div class="line">	git push origin hexo</div><div class="line">	hexo clean</div><div class="line">	hexo g</div><div class="line">	hexo d  </div><div class="line">若推送失败可以尝试强制推送：```git push origin hexo -f</div></pre></td></tr></table></figure></p>
 <p>推送之后打开<a href="https://github.com/chinazzk/chinazzk.github.io/查看分支中文件夹及文件是否更新。">https://github.com/chinazzk/chinazzk.github.io/查看分支中文件夹及文件是否更新。</a>  </p>
 
       
@@ -426,9 +426,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag"># github</a>
-          
             <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/github/" rel="tag"># github</a>
           
         </div>
       
@@ -525,7 +525,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -536,7 +536,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
