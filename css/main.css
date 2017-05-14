@@ -829,7 +829,7 @@ pre .javascript .function {
 .post-button .btn:hover {
   border-color: #222;
   color: #fff;
-  background: #222;
+  background: #191970;
 }
 .btn-bar {
   display: block;
@@ -1619,7 +1619,7 @@ pre .javascript .function {
 .site-author-name {
   margin: 0;
   text-align: center;
-  color: #222;
+  color: #20b2aa;
   font-weight: 600;
 }
 .site-description {
@@ -1696,7 +1696,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff94;
+  background: #ab45ec;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2639,7 +2639,7 @@ pre .javascript .function {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #222;
+  background: #191970;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
