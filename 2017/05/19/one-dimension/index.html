@@ -99,7 +99,7 @@
 <meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2017/05/19/one-dimension/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
 <meta property="og:description" content="对简单的一维点源瞬时释放的结果推导过程记录如下">
-<meta property="og:updated_time" content="2017-05-20T02:34:28.950Z">
+<meta property="og:updated_time" content="2017-05-20T02:41:57.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Point Source Impulse Analytical Solution">
 <meta name="twitter:description" content="对简单的一维点源瞬时释放的结果推导过程记录如下">
@@ -408,7 +408,7 @@
 <p>这篇博客用markdown写完后，因为有公式，用hexo 无法渲染，百度之后，才知道是因为markdown对一些特殊字符的处理不友好，容易出现异常。找到了对应的解决方法，将地址贴在这里<br><a href="http://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="external">在Hexo中渲染MathJax数学公式1</a><br><a href="https://segmentfault.com/a/1190000007261752" target="_blank" rel="external">在Hexo中渲染MathJax数学公式2</a><br>我使用的方法是链接2中的<strong>修改Hexo渲染源码</strong>大致过程如下<br>在博客根文件夹下找到：nodes_modules/marked/lib/marked.js 文件</p>
 <ul>
 <li>去掉\与{}的额外转义</li>
-<li>将em标签对应的符号中，去掉 _ 因为markdown中有 <em> 可以表示斜体。<br>找到代码:<br>escape: /^\([\`</em>{}[]()# +-.!_&gt;])/,<br>改为：<br>escape: /^\([`<em>[]()# +-.!_&gt;])/,<br>招待代码：<br>em: /^\b_((?:[^_]|__)+?)_\b|^\</em>((?:**|[\s\S])+?)*(?!*)/,<br>改为：<br>em: /^*((?:**|[\s\S])+?)*(?!*)/,<br>启动hexo s -p 5000 调试<br>这里需要注意的是：</li>
+<li>将em标签对应的符号中，去掉 _ 因为markdown中有 <em> 可以表示斜体。<br>找到代码:<br>escape: /^\([\`</em>{}[]()# +-.!_&gt;])/,<br>改为：<br>escape: /^\([`<em>[]()# +-.!_&gt;])/,<br>找到代码：<br>em: /^\b_((?:[^_]|__)+?)_\b|^\</em>((?:**|[\s\S])+?)*(?!*)/,<br>改为：<br>em: /^*((?:**|[\s\S])+?)*(?!*)/,<br>启动hexo s -p 5000 调试<br>这里需要注意的是：</li>
 <li>在博客的markdown文件中，公式的输入{与{ ，}与}之间一定要留有空格。</li>
 <li>所使用的主题一定要支持mathjax，且在配置文件中mathjax开关是打开的。</li>
 <li>markdown 文件中文章开头的Front-matter里要打开mathjax开关[mathjax: true]。<br>用链接1中的方法，修改渲染引擎，hexo-renderer-pandoc ，在hexo g时出错，hexo-renderer-kramed ，在hexo g 与 hexo d 无错误，但是，打开网页显示404！</li>
