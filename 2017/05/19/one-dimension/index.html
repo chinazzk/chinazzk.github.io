@@ -99,7 +99,7 @@
 <meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2017/05/19/one-dimension/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
 <meta property="og:description" content="对简单的一维点源瞬时释放的结果推导过程记录如下">
-<meta property="og:updated_time" content="2017-05-22T07:22:07.564Z">
+<meta property="og:updated_time" content="2017-05-22T08:14:17.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Point Source Impulse Analytical Solution">
 <meta name="twitter:description" content="对简单的一维点源瞬时释放的结果推导过程记录如下">
@@ -400,7 +400,7 @@
       
         <p>对简单的一维点源瞬时释放的结果推导过程记录如下<br><a id="more"></a><br>Governing equation<br>$$\frac{\partial c}{\partial t}=D\frac{ {\partial}^2c}{\partial x^2}-V\frac{\partial c}{\partial x}-\lambda c \tag{1}$$<br>inital condition<br>$$c(x,0)=0\tag{2}$$<br>boundary condition<br>$$c(0,t)=C_M \delta (t)=\frac{M}{An} \delta (t)\tag{3}$$<br>$$\frac{\partial c(\infty,t)}{\partial x}=0\tag{4}$$<br>where $c$ is the concentration,$D$ is the dipersion coefficient, V is the seepage velocity,$\lambda$ is the first order degradation rate,$C_M$ is the instantaneous source concentration, $M$ is the mass of solute introduced instantaneously,$A$ is the unit volume,$n$ is the porosity.<br>do laplace transformation with equation 1-3<br>$$c(x,s)=\mathcal{L}[c(x,t)]$$<br>$$sc(x,s)-c|{t=0} =D\frac{ {\partial}^2c(x,s)}{\partial x^2}-V\frac{\partial (x,s)}{\partial x}-\lambda c(x,s)\\D\frac{ {\partial}^2c(x,s)}{\partial x^2}-V\frac{\partial (x,s)}{\partial x}-(\lambda +s)c(x,s)=0\tag{5}$$<br>$$c(0,s)=C_M$$<br>$$\frac{\partial c(\infty,s)}{\partial x}=0$$<br>the solution of  equation 5 is<br>$$c=c_1exp(k_1x)+c_2exp(k_2x)\tag{6}$$<br>$k_1$ and $k_2$ got from the characteristic equation as fllowing<br>$$k^2-\frac{V}{D}k-\frac{\lambda +s}{D}=0$$<br>the solution are<br>$$k_1=\frac{\sqrt{\frac{ V^2}{D^2}+4\frac{\lambda +s}{D}}+\frac{V}{D}}{2}$$<br>$$k_2=\frac{-\sqrt{\frac{V^2}{D^2}+4\frac{\lambda +s}{D}}+\frac{V}{D}}{2}$$<br>substitude the boundary condition into 6<br>$$c_1 +c_2=C_M$$<br>$$c_1k_1e^{k_1x}+c_2k_2e^{k_2x}=0$$<br>then $c_1=0$ and $c_2=C_M$<br>$$c(x,s) =C_Mexp(\frac{-\sqrt{\frac{V^2}{D^2}+4\frac{\lambda +s}{D}}+\frac{V}{D}}{2}x)\\  =C_Mexp(\frac{V}{2D}x)       exp(-\sqrt{\frac{V^2}{4D^2}+\frac{\lambda +s}{D}}x)\\C_Mexp(\frac{V}{2D}x)       exp(-x\sqrt{\frac{1}{D}}\sqrt{ s-(-\frac{V^2}{4D}-\lambda})$$</p>
 <p>the inverse laplace  transformation  of $c(x,s)$ is </p>
-<p>according to $F(s-a)$~$e^{at}f(t)$  and $e^{-\sqrt {\frac{s}{\kappa}}x}$~$\frac{x}{2\sqrt{\pi \kappa t^3} }e^{-x^2/4\kappa t}$</p>
+<p>according to $F(s-a)$~$e^{at}f(t)$ [文献1公式29.2.12] and $e^{-\sqrt {\frac{s}{\kappa}}x}$~$\frac{x}{2\sqrt{\pi \kappa t^3} }e^{-x^2/4\kappa t}$[文献2中附录V公式6]</p>
 <p>$a=-\frac{v^2}{4D}-\lambda$ and $\kappa =D$</p>
 <p>$$c(x,t)=C_Mexp(\frac{V}{2D}x)exp[ (-\frac{V^2}{4D}-\lambda)t]\frac{x}{2\sqrt{\pi D t^3} }exp(-\frac{x^2}{4D t})$$</p>
 <p>$$c(x,t)=C_M\frac{x}{\sqrt{4\pi Dt^3} }exp \left [- \frac{ (x-Vt)^2}{4Dt}-\lambda t \right ]$$</p>
