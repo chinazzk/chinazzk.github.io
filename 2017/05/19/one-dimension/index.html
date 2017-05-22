@@ -99,7 +99,7 @@
 <meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2017/05/19/one-dimension/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
 <meta property="og:description" content="对简单的一维点源瞬时释放的结果推导过程记录如下">
-<meta property="og:updated_time" content="2017-05-20T02:43:40.204Z">
+<meta property="og:updated_time" content="2017-05-22T03:38:48.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Point Source Impulse Analytical Solution">
 <meta name="twitter:description" content="对简单的一维点源瞬时释放的结果推导过程记录如下">
@@ -403,6 +403,7 @@
 <p>according to $F(s-a)$~$e^{at}f(t)$  and $e^{-\sqrt {\frac{s}{\kappa}}x}$~$\frac{x}{2\sqrt{\pi \kappa t^3} }e^{-x^2/4\kappa t}$</p>
 <p>$a=-\frac{v^2}{4D}-\lambda$ and $\kappa =D$</p>
 <p>$$c(x,t)=C_Mexp(\frac{V}{2D}x)exp[ (-\frac{v^2}{4D}-\lambda)t]\frac{x}{2\sqrt{\pi D t^3} }exp(-\frac{x^2}{4D t})$$</p>
+<p>$$c(x,t)=C_M\frac{x}{\sqrt{4\pi Dt^3} }exp \left [- \frac{ (x-Vt)^2}{4Dt}-\lambda t \right ]$$</p>
 <p>[1] : Abramowitz, Milton, and Irene A. Stegun. <em>Handbook of mathematical functions: with formulas, graphs, and mathematical tables</em>. Vol. 55. Courier Corporation, 1964.</p>
 <p>[2] : Carslaw, Horatio Scott, and John Conrad Jaeger. “Conduction of heat in solids.” Oxford: Clarendon Press, 1959, 2nd ed. (1959).</p>
 <p>这篇博客用markdown写完后，因为有公式，用hexo 无法渲染，百度之后，才知道是因为markdown对一些特殊字符的处理不友好，容易出现异常。找到了对应的解决方法，将地址贴在这里<br><a href="http://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="external">在Hexo中渲染MathJax数学公式1</a><br><a href="https://segmentfault.com/a/1190000007261752" target="_blank" rel="external">在Hexo中渲染MathJax数学公式2</a><br>我使用的方法是链接2中的<strong>修改Hexo渲染源码</strong>大致过程如下<br>在博客根文件夹下找到：nodes_modules/marked/lib/marked.js 文件</p>
@@ -532,7 +533,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -554,7 +555,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
