@@ -8,39 +8,67 @@ mathjax: true
 ---
 对简单的一维点源瞬时释放的结果推导过程记录如下
 <!-- more -->
-Governing equation
+**Governing equation**
 $$\frac{\partial c}{\partial t}=D\frac{ {\partial}^2c}{\partial x^2}-V\frac{\partial c}{\partial x}-\lambda c \tag{1}$$  
-inital condition
+**inital condition**
 $$c(x,0)=0\tag{2}$$  
-boundary condition
-$$c(0,t)=C_M \delta (t)=\frac{M}{An} \delta (t)\tag{3}$$ 
-$$\frac{\partial c(\infty,t)}{\partial x}=0\tag{4}$$ 
-where $c$ is the concentration,$D$ is the dipersion coefficient, V is the seepage velocity,$\lambda$ is the first order degradation rate,$C_M$ is the instantaneous source concentration, $M$ is the mass of solute introduced instantaneously,$A$ is the unit volume,$n$ is the porosity. 
-do laplace transformation with equation 1-3
-$$c(x,s)=\mathcal{L}[c(x,t)]$$
-$$sc(x,s)-c|{t=0} =D\frac{ {\partial}^2c(x,s)}{\partial x^2}-V\frac{\partial (x,s)}{\partial x}-\lambda c(x,s)\\D\frac{ {\partial}^2c(x,s)}{\partial x^2}-V\frac{\partial (x,s)}{\partial x}-(\lambda +s)c(x,s)=0\tag{5}$$  
-$$c(0,s)=C_M$$
-$$\frac{\partial c(\infty,s)}{\partial x}=0$$
-the solution of  equation 5 is 
-$$c=c_1exp(k_1)+c_2exp(k_2)\tag{6}$$  
-$k_1$ and $k_2$ got from the characteristic equation as fllowing
-$$k^2-\frac{V}{D}k-\frac{\lambda +s}{D}=0$$
-the solution are
-$$k_1=\frac{\sqrt{\frac{v^2}{D^2}+4\frac{\lambda +s}{D}}+\frac{V}{D}}{2}$$
-$$k_2=\frac{-\sqrt{\frac{v^2}{D^2}+4\frac{\lambda +s}{D}}+\frac{V}{D}}{2}$$
-substitude the boundary condition into 6
-$$c_1 +c_2=C_M$$
-$$c_1k_1e^{k_1x}+c_2k_2e^{k_2x}=0$$
-then $c_1=0$ and $c_2=C_M$
-$$c(x,s) =C_Mexp(\frac{-\sqrt{\frac{v^2}{D^2}+4\frac{\lambda +s}{D}}+\frac{V}{D}}{2}x)\\  =C_Mexp(\frac{V}{2D}x)       exp(-\sqrt{\frac{v^2}{4D^2}+\frac{\lambda +s}{D}}x)\\C_Mexp(\frac{V}{2D}x)       exp(-x\sqrt{\frac{1}{D}}\sqrt{ s-(-\frac{v^2}{4D}-\lambda})$$
+**boundary condition**
+- first type
+  $$c(0,t)=C_M \delta (t)=\frac{M}{An} \delta (t)\tag{3}$$ 
+  $$\frac{\partial c(\infty,t)}{\partial x}=0\tag{4}$$ 
+- third type
+  $$Vc(0,t)-D\frac{\partial c(0,t)}{\partial x}=VC_M=\frac{M}{An} \delta (t)\tag{5}$$
+  $$\frac{\partial c(\infty,t)}{\partial x}=0\tag{4}$$ 
+  where $c$ is the concentration, $D$ is the dipersion coefficient, V is the seepage velocity, $\lambda$ is the first order degradation rate, $C_M$ is the instantaneous source concentration, $M$ is the mass of solute introduced  instantaneously, $A$ is the unit volume, $n$ is the porosity. 
+
+  do laplace transformation with equation 1-5
+  $$c(x,s)=\mathcal{L}[c(x,t)]$$
+  $$sc(x,s)-c|{t=0} =D\frac{ {\partial}^2c(x,s)}{\partial x^2}-V\frac{\partial (x,s)}{\partial x}-\lambda c(x,s)\\D\frac{ {\partial}^2c(x,s)}{\partial x^2}-V\frac{\partial (x,s)}{\partial x}-(\lambda +s)c(x,s)=0\tag{6}$$  
+  $$c(0,s)=C_M$$
+  $$Vc(0,s)-D\frac{\partial c(0,s)}{\partial x}=VC_M$$
+  $$\frac{\partial c(\infty,s)}{\partial x}=0$$
+  the solution of  equation 6 is 
+  $$c=c_1exp(k_1x)+c_2exp(k_2x)\tag{7}$$  
+  $k_1$ and $k_2$ got from the characteristic equation as fllowing
+  $$k^2-\frac{V}{D}k-\frac{\lambda +s}{D}=0$$
+  the solution are
+  $$k_1=\frac{\sqrt{\frac{ V^2}{D^2}+4\frac{\lambda +s}{D}}+\frac{V}{D}}{2}$$
+  $$k_2=\frac{-\sqrt{\frac{V^2}{D^2}+4\frac{\lambda +s}{D}}+\frac{V}{D}}{2}$$
+
+- substitude the first type boundary condition into 7
+  $$c_1 +c_2=C_M$$
+  $$c_1k_1e^{k_1x}+c_2k_2e^{k_2x}=0$$
+  then $c_1=0$ and $c_2=C_M$
+  $$c(x,s) =C_Mexp(\frac{-\sqrt{\frac{V^2}{D^2}+4\frac{\lambda +s}{D}}+\frac{V}{D}}{2}x)\\  =C_Mexp(\frac{V}{2D}x)       exp(-\sqrt{\frac{V^2}{4D^2}+\frac{\lambda +s}{D}}x)\\C_Mexp(\frac{V}{2D}x)       exp(-x\sqrt{\frac{1}{D}}\sqrt{ s-(-\frac{V^2}{4D}-\lambda})$$
 
 the inverse laplace  transformation  of $c(x,s)$ is 
 
-according to $F(s-a)$~$e^{at}f(t)$  and $e^{-\sqrt {\frac{s}{\kappa}}x}$~$\frac{x}{2\sqrt{\pi \kappa t^3} }e^{-x^2/4\kappa t}$
+according to $F(s-a)$~$e^{at}f(t)$ [文献1公式29.2.12] and $e^{-\sqrt {\frac{s}{\kappa}}x}$~$\frac{x}{2\sqrt{\pi \kappa t^3} }e^{-x^2/4\kappa t}$[文献2中附录V公式6]
 
 $a=-\frac{v^2}{4D}-\lambda$ and $\kappa =D$
 
-$$c(x,t)=C_Mexp(\frac{V}{2D}x)exp[ (-\frac{v^2}{4D}-\lambda)t]\frac{x}{2\sqrt{\pi D t^3} }exp(-\frac{x^2}{4D t})$$
+$$c(x,t)=C_Mexp(\frac{V}{2D}x)exp[ (-\frac{V^2}{4D}-\lambda)t]\frac{x}{2\sqrt{\pi D t^3} }exp(-\frac{x^2}{4D t})$$
+
+$$c(x,t)=C_M\frac{x}{\sqrt{4\pi Dt^3} }exp \left [- \frac{ (x-Vt)^2}{4Dt}-\lambda t \right ]$$
+
+- substitude the third type boundary condition into 7
+
+$$V(c_1+c_2)-D(c_1k_1+c_2k_2)=VC_M​$$
+$$c_1k_1e^{k_1x}+c_2k_2e^{k_2x}=0$$
+then $c_1=0$ and $c_2=\frac{VC_M}{V-Dk_2}$
+the equation 7 then can be writed as:
+$$c(x,s)=\frac{VC_M}{V-Dk_2}exp(k_2x)$$
+$$c(x,s)=\frac{VC_M}{\sqrt{V^2+4\lambda D+4Ds} }exp\left (\frac{V-\sqrt{V^2+4\lambda D+4Ds} }{2D}x\right )$$
+$$c(x,s)=\frac{VC_M}{2D}exp(\frac{Vx}{2D})\frac{1}{\left(\frac{\frac{V^2}{4D}+\lambda +s}{D}\right )^{\frac{1}{2} } }exp\left [- \left ( \frac {\frac{V^2}{4D}+\lambda +s}{D} \right )^{\frac{1}{2}}x\right ]$$
+
+the inverse laplace  transformation  of $c(x,s)$ is 
+
+according to $F(s-a)$~$e^{at}f(t)$ [文献1公式29.2.12] and $\frac{1}{\sqrt {\frac{s}{\kappa}}}e^{-\sqrt {\frac{s}{\kappa}}x}$~$\sqrt{\frac{\kappa}{\pi t }}e^{-x^2/4\kappa t}$ [文献2附录V公式7]
+
+$$c(x,t)=\frac{VC_Mexp(\frac{V}{2D}x)}{2D}exp[ (-\frac{V^2}{4D}-\lambda)t]\frac{\sqrt{D}}{\sqrt{\pi  t} }exp(-\frac{x^2}{4D t})$$
+
+$$c(x,t)=VC_M\frac{1}{\sqrt{4\pi Dt}}exp\left[ -\frac{(x-Vt)^2}{4Dt}-\lambda t  \right]$$
+
 
 [1] : Abramowitz, Milton, and Irene A. Stegun. *Handbook of mathematical functions: with formulas, graphs, and mathematical tables*. Vol. 55. Courier Corporation, 1964.
 
@@ -54,12 +82,12 @@ $$c(x,t)=C_Mexp(\frac{V}{2D}x)exp[ (-\frac{v^2}{4D}-\lambda)t]\frac{x}{2\sqrt{\p
 我使用的方法是链接2中的**修改Hexo渲染源码**大致过程如下
 在博客根文件夹下找到：nodes_modules/marked/lib/marked.js 文件
 - 去掉\与{}的额外转义
-- 将em标签对应的符号中，去掉 _ 因为markdown中有 * 可以表示斜体。
+- 将em标签对应的符号中，去掉 _ 因为markdown中有 \* 可以表示斜体。
   找到代码:
   escape: /^\\([\\`*{}\[\]()# +\-.!_>])/,
   改为：
   escape: /^\\([`*\[\]()# +\-.!_>])/,
-  招待代码：
+  找到代码：
   em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
   改为：
   em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
