@@ -1,7 +1,7 @@
 ---
 title: 恋恋风尘
 date: 2017-06-20
-categories: 随笔札记
+categories: 心情札记
 tags:
     -记述
 mathjax: true

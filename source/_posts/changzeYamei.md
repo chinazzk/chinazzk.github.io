@@ -1,7 +1,7 @@
 ---
 title: Nagasawa Masami
 date: 2017-05-17 21:36:21
-categories: 随笔札记
+categories: 心情札记
 tags:
     -长泽雅美
 ---
