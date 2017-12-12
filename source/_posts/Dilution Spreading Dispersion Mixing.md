@@ -1,7 +1,7 @@
 ---
-title: Nagasawa Masami
-date: 2017-05-17 21:36:21
-categories: research
+title: Dilution Spreading Mixing
+date: 2017-12-12 21:36:21
+categories: Research
 tags:
     -dilution
     -spreading
