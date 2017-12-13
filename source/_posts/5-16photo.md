@@ -6,9 +6,10 @@ tags:
    -植树
 
 ---
-![猫与水杯](http://opy4d6q9k.bkt.clouddn.com/wx_camera_1491965305424%20%E6%8B%B7%E8%B4%9D1.jpg)
 植树就是这只穿着黑色晚礼服的白猫，在植树节当晚在楼道遇到这个非常凶悍的小家伙，劝说曾经的猫奴师兄收养，他[你养，我买猫砂猫粮]我[卒……]。
 <!-- more -->
+![猫与水杯](http://opy4d6q9k.bkt.clouddn.com/wx_camera_1491965305424%20%E6%8B%B7%E8%B4%9D1.jpg)
+
 ![猫与冰箱](http://opy4d6q9k.bkt.clouddn.com/P70511-044928%281%29.jpg)
 ***
 ![猫与盒子](http://opy4d6q9k.bkt.clouddn.com/P70409-015154%20%E6%8B%B7%E8%B4%9D.jpg)
