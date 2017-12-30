@@ -1,0 +1,71 @@
+---
+title: 用matplotlib绘图的基础代码模板
+date: 2017-12-29 22:34:53
+categories: Research
+tags: - python 
+- matplotlib
+---
+嫌弃MATLAB画出的图可定制性不高，试下用python的matplotlib绘图，并没有多好看，水平不够的时候还是用图形界面吧。
+记下几行代码
+
+<!--  more -->
+```python
+from __future__ import unicode_literals
+import numpy as np
+import matplotlib
+matplotlib.rcParams['text.usetex'] = True
+matplotlib.rcParams['text.latex.unicode'] = True
+import matplotlib.pyplot as plt
+import local_dispersion as lo
+
+# `图像函数` 
+DA = np.arange(0.001, 100, 0.1)  # DA取值范围及步长`
+keff1 = [lo.iteration(T, 0.01, 1, 0.5, 0.5) for T in DA]  
+keff2 = [lo.iteration(T, 0.1, 1, 0.5, 0.5) for T in DA]
+`keff3 = [lo.iteration(T, 1, 1, 0.5, 0.5) for T in DA]
+# lo.iteration 是我需要绘图的函数，由于里面有数值积分
+# 返回值为一维数组，目前只能以以上方式绘出
+
+# `设置图像大小 控制xy轴长度`
+plt.figure(figsize=(6, 6))
+
+# `定义坐标轴取值范围`
+plt.xlim([0.001, 100])
+plt.ylim([0.5, 1])
+
+# `绘制图像`
+plt.plot(DA, keff1, linewidth=1, color='red', label='0.01', linestyle='--')
+plt.semilogx(DA, keff2, linewidth=1, color='black', label='0.1', linestyle='-.')
+plt.semilogx(DA, keff3, linewidth=1, color='black', label='1', linestyle=':')  # 横坐标为对数坐标`
+
+# `横坐标为对数坐标`
+plt.xscale('log')
+
+# `图形名称`
+plt.title('effective decay rate')
+
+# `坐标轴的标签label`
+plt.ylabel(r'$\frac{{\mu}_e}{\bar{\mu}}$', rotation=0, fontsize=14, color='red')
+plt.xlabel(r'$ \frac{\bar{U}t}{l}$', rotation=0, fontsize=14, color='red')
+
+# `坐标轴的刻度`
+# `my_x_ticks=np.arange(0.001, 100, 10)`
+# `plt.xticks(my_x_ticks)`
+
+# `显示次要刻度`
+plt.minorticks_on()
+# `设置主刻度及次刻度的朝向`
+plt.tick_params(which='both', direction='in')
+
+# `图例legend 调整图例位置`
+plt.legend(bbox_to_anchor=(0.03, 0.95), loc='upper left')
+
+# `添加文本`
+plt.text(0.003, 0.55, r'$\displaystyle\frac{{\sigma}_{\mu}}{\bar{\mu}}=0.5$', fontsize=10)`
+plt.text(0.003, 0.60, r'$\displaystyle\frac{{\bar{U}}}{\bar{\mu}l}=1$', fontsize=10)`
+# `自动调整坐标轴位置`
+plt.tight_layout()
+# 显示plot
+plt.show()
+```
+
