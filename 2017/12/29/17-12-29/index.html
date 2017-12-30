@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="嫌弃MATLAB画出的图可定制性不高，试下用python的matplotlib绘图，并没有多好看，水平不够的时候还是用图形界面吧。记下几行代码">
+<meta name="description" content="嫌弃MATLAB画出的图可定制性不高，试下用python的matplotlib绘图，并没有多好看，水平不够的时候还是用图形界面吧。记下几行代码 ps：tags的格式没写对，居然就无法转为网页……">
 <meta name="keywords" content="python,matplotlib">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用matplotlib绘图的基础代码模板">
 <meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2017/12/29/17-12-29/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
-<meta property="og:description" content="嫌弃MATLAB画出的图可定制性不高，试下用python的matplotlib绘图，并没有多好看，水平不够的时候还是用图形界面吧。记下几行代码">
-<meta property="og:updated_time" content="2017-12-30T04:34:41.785Z">
+<meta property="og:description" content="嫌弃MATLAB画出的图可定制性不高，试下用python的matplotlib绘图，并没有多好看，水平不够的时候还是用图形界面吧。记下几行代码 ps：tags的格式没写对，居然就无法转为网页……">
+<meta property="og:updated_time" content="2017-12-30T04:39:23.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用matplotlib绘图的基础代码模板">
-<meta name="twitter:description" content="嫌弃MATLAB画出的图可定制性不高，试下用python的matplotlib绘图，并没有多好看，水平不够的时候还是用图形界面吧。记下几行代码">
+<meta name="twitter:description" content="嫌弃MATLAB画出的图可定制性不高，试下用python的matplotlib绘图，并没有多好看，水平不够的时候还是用图形界面吧。记下几行代码 ps：tags的格式没写对，居然就无法转为网页……">
 
 
 
@@ -409,6 +409,7 @@
 
       
         <p>嫌弃MATLAB画出的图可定制性不高，试下用python的matplotlib绘图，并没有多好看，水平不够的时候还是用图形界面吧。<br>记下几行代码</p>
+<p>ps：tags的格式没写对，居然就无法转为网页……</p>
 <a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> unicode_literals</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib</div><div class="line">matplotlib.rcParams[<span class="string">'text.usetex'</span>] = <span class="keyword">True</span></div><div class="line">matplotlib.rcParams[<span class="string">'text.latex.unicode'</span>] = <span class="keyword">True</span></div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> local_dispersion <span class="keyword">as</span> lo</div><div class="line"></div><div class="line"><span class="comment"># `图像函数` </span></div><div class="line">DA = np.arange(<span class="number">0.001</span>, <span class="number">100</span>, <span class="number">0.1</span>)  <span class="comment"># DA取值范围及步长`</span></div><div class="line">keff1 = [lo.iteration(T, <span class="number">0.01</span>, <span class="number">1</span>, <span class="number">0.5</span>, <span class="number">0.5</span>) <span class="keyword">for</span> T <span class="keyword">in</span> DA]  </div><div class="line">keff2 = [lo.iteration(T, <span class="number">0.1</span>, <span class="number">1</span>, <span class="number">0.5</span>, <span class="number">0.5</span>) <span class="keyword">for</span> T <span class="keyword">in</span> DA]</div><div class="line">`keff3 = [lo.iteration(T, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0.5</span>, <span class="number">0.5</span>) <span class="keyword">for</span> T <span class="keyword">in</span> DA]</div><div class="line"><span class="comment"># lo.iteration 是我需要绘图的函数，由于里面有数值积分</span></div><div class="line"><span class="comment"># 返回值为一维数组，目前只能以以上方式绘出</span></div><div class="line"></div><div class="line"><span class="comment"># `设置图像大小 控制xy轴长度`</span></div><div class="line">plt.figure(figsize=(<span class="number">6</span>, <span class="number">6</span>))</div><div class="line"></div><div class="line"><span class="comment"># `定义坐标轴取值范围`</span></div><div class="line">plt.xlim([<span class="number">0.001</span>, <span class="number">100</span>])</div><div class="line">plt.ylim([<span class="number">0.5</span>, <span class="number">1</span>])</div><div class="line"></div><div class="line"><span class="comment"># `绘制图像`</span></div><div class="line">plt.plot(DA, keff1, linewidth=<span class="number">1</span>, color=<span class="string">'red'</span>, label=<span class="string">'0.01'</span>, linestyle=<span class="string">'--'</span>)</div><div class="line">plt.semilogx(DA, keff2, linewidth=<span class="number">1</span>, color=<span class="string">'black'</span>, label=<span class="string">'0.1'</span>, linestyle=<span class="string">'-.'</span>)</div><div class="line">plt.semilogx(DA, keff3, linewidth=<span class="number">1</span>, color=<span class="string">'black'</span>, label=<span class="string">'1'</span>, linestyle=<span class="string">':'</span>)  <span class="comment"># 横坐标为对数坐标`</span></div><div class="line"></div><div class="line"><span class="comment"># `横坐标为对数坐标`</span></div><div class="line">plt.xscale(<span class="string">'log'</span>)</div><div class="line"></div><div class="line"><span class="comment"># `图形名称`</span></div><div class="line">plt.title(<span class="string">'effective decay rate'</span>)</div><div class="line"></div><div class="line"><span class="comment"># `坐标轴的标签label`</span></div><div class="line">plt.ylabel(<span class="string">r'$\frac&#123;&#123;\mu&#125;_e&#125;&#123;\bar&#123;\mu&#125;&#125;$'</span>, rotation=<span class="number">0</span>, fontsize=<span class="number">14</span>, color=<span class="string">'red'</span>)</div><div class="line">plt.xlabel(<span class="string">r'$ \frac&#123;\bar&#123;U&#125;t&#125;&#123;l&#125;$'</span>, rotation=<span class="number">0</span>, fontsize=<span class="number">14</span>, color=<span class="string">'red'</span>)</div><div class="line"></div><div class="line"><span class="comment"># `坐标轴的刻度`</span></div><div class="line"><span class="comment"># `my_x_ticks=np.arange(0.001, 100, 10)`</span></div><div class="line"><span class="comment"># `plt.xticks(my_x_ticks)`</span></div><div class="line"></div><div class="line"><span class="comment"># `显示次要刻度`</span></div><div class="line">plt.minorticks_on()</div><div class="line"><span class="comment"># `设置主刻度及次刻度的朝向`</span></div><div class="line">plt.tick_params(which=<span class="string">'both'</span>, direction=<span class="string">'in'</span>)</div><div class="line"></div><div class="line"><span class="comment"># `图例legend 调整图例位置`</span></div><div class="line">plt.legend(bbox_to_anchor=(<span class="number">0.03</span>, <span class="number">0.95</span>), loc=<span class="string">'upper left'</span>)</div><div class="line"></div><div class="line"><span class="comment"># `添加文本`</span></div><div class="line">plt.text(<span class="number">0.003</span>, <span class="number">0.55</span>, <span class="string">r'$\displaystyle\frac&#123;&#123;\sigma&#125;_&#123;\mu&#125;&#125;&#123;\bar&#123;\mu&#125;&#125;=0.5$'</span>, fontsize=<span class="number">10</span>)`</div><div class="line">plt.text(<span class="number">0.003</span>, <span class="number">0.60</span>, <span class="string">r'$\displaystyle\frac&#123;&#123;\bar&#123;U&#125;&#125;&#125;&#123;\bar&#123;\mu&#125;l&#125;=1$'</span>, fontsize=<span class="number">10</span>)`</div><div class="line"><span class="comment"># `自动调整坐标轴位置`</span></div><div class="line">plt.tight_layout()</div><div class="line"><span class="comment"># 显示plot</span></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
 
@@ -455,8 +456,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/14/17-12-14/" rel="next" title="How to writing a Introduction">
-                <i class="fa fa-chevron-left"></i> How to writing a Introduction
+              <a href="/2017/12/16/17-12-16-real-lonely/" rel="next" title="You Can Change Nothing But Yourself">
+                <i class="fa fa-chevron-left"></i> You Can Change Nothing But Yourself
               </a>
             
           </div>
@@ -528,7 +529,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
