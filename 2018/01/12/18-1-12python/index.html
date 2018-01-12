@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="-GH60," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -92,30 +92,17 @@
 
 
 
-<meta name="description" content="看着Python教程，忽然想换个键盘，然后看到了GH60客制版键盘，随决定试一下……网上教程非常多，这里我只简单记述下自己的过程。">
-<meta name="keywords" content="-GH60">
+<meta name="description" content="关于数组的一些“芝士”">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GH60组装简述">
-<meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2017/05/23/GH60/index.html">
+<meta property="og:title" content="关于numpy包中数组(array) 矩阵(matrix) 列表(list) 的概念">
+<meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2018/01/12/18-1-12python/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
-<meta property="og:description" content="看着Python教程，忽然想换个键盘，然后看到了GH60客制版键盘，随决定试一下……网上教程非常多，这里我只简单记述下自己的过程。">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/%E9%94%AE%E7%9B%98.png">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/Samwisekoi.png">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/%E9%94%AE.png">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/%E9%85%8D%E5%88%97.png">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/%E9%85%8D%E5%88%971.png">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/P70525-124050.jpg">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/5.jpg">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/106.jpg">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/P70525-143535.jpg">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/P70525-161337.jpg">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/P70525-161406.jpg">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/P70525-165105.jpg">
-<meta property="og:updated_time" content="2017-12-12T08:11:42.090Z">
+<meta property="og:description" content="关于数组的一些“芝士”">
+<meta property="og:updated_time" content="2018-01-12T15:54:01.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GH60组装简述">
-<meta name="twitter:description" content="看着Python教程，忽然想换个键盘，然后看到了GH60客制版键盘，随决定试一下……网上教程非常多，这里我只简单记述下自己的过程。">
-<meta name="twitter:image" content="http://opy4d6q9k.bkt.clouddn.com/%E9%94%AE%E7%9B%98.png">
+<meta name="twitter:title" content="关于numpy包中数组(array) 矩阵(matrix) 列表(list) 的概念">
+<meta name="twitter:description" content="关于数组的一些“芝士”">
 
 
 
@@ -143,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/chinazzk/chinazzk.github.io/2017/05/23/GH60/"/>
+  <link rel="canonical" href="https://github.com/chinazzk/chinazzk.github.io/2018/01/12/18-1-12python/"/>
 
 
 
 
 
-  <title>GH60组装简述 | ALL YOU WANT IS TOO MUCH</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>关于numpy包中数组(array) 矩阵(matrix) 列表(list) 的概念 | ALL YOU WANT IS TOO MUCH</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -307,7 +294,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/chinazzk/chinazzk.github.io/2017/05/23/GH60/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/chinazzk/chinazzk.github.io/2018/01/12/18-1-12python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PLANET">
@@ -324,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">GH60组装简述</h1>
+          <h1 class="post-title" itemprop="name headline">关于numpy包中数组(array) 矩阵(matrix) 列表(list) 的概念</h1>
         
 
         <div class="post-meta">
@@ -336,8 +323,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T02:26:57+08:00">
-                2017-05-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-12T22:49:53+08:00">
+                2018-01-12
               </time>
             
 
@@ -359,8 +346,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技工实践/" itemprop="url" rel="index">
-                    <span itemprop="name">技工实践</span>
+                  <a href="/categories/Research/" itemprop="url" rel="index">
+                    <span itemprop="name">Research</span>
                   </a>
                 </span>
 
@@ -378,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/23/GH60/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/05/23/GH60/" itemprop="commentsCount"></span>
+                <a href="/2018/01/12/18-1-12python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/12/18-1-12python/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -388,7 +375,7 @@
 
           
           
-             <span id="/2017/05/23/GH60/" class="leancloud_visitors" data-flag-title="GH60组装简述">
+             <span id="/2018/01/12/18-1-12python/" class="leancloud_visitors" data-flag-title="关于numpy包中数组(array) 矩阵(matrix) 列表(list) 的概念">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,21 +408,18 @@
       
 
       
-        <p>看着Python教程，忽然想换个键盘，然后看到了GH60客制版键盘，随决定试一下……<br>网上教程非常多，这里我只简单记述下自己的过程。<br><a id="more"></a></p>
-<h5 id="所需套件列表："><a href="#所需套件列表：" class="headerlink" title="所需套件列表："></a>所需套件列表：</h5><p>1  底座外壳：GH60塑料外壳                    ￥35<br>2  键帽：PBT标准配列Poker                     ￥98<br>3  连接线：LINDY                                       ￥35<br>4   PCB板：[SATAN GH60]                         ￥179<br>5  卫星轴                                                       ￥20<br>6  轴体：3脚CHERRY青轴/茶轴 2.5*64=  ￥160<br>7  定位板： GH60阳极铝定位板                 ￥79<br>8  LED：白色64个                       0.25*64= ￥17.5<br>共：623.5元 打折、使用优惠券之后 540元 老板很痛快，咋感觉还可以便宜呢……<br><img src="http://opy4d6q9k.bkt.clouddn.com/%E9%94%AE%E7%9B%98.png" alt="键盘套件"></p>
-<h6 id="工具："><a href="#工具：" class="headerlink" title="工具："></a>工具：</h6><p>电烙铁套装：电烙铁+烙铁架+松香+吸锡器+弯头镊子+海绵+焊锡丝28.2元<br>直头镊子（已有）<br>十字螺丝刀（已有）</p>
-<p>我想要的配列：</p>
-<p><img src="http://opy4d6q9k.bkt.clouddn.com/Samwisekoi.png" alt="a">                                  <img src="http://opy4d6q9k.bkt.clouddn.com/%E9%94%AE.png" alt="3"><br><img src="http://opy4d6q9k.bkt.clouddn.com/%E9%85%8D%E5%88%97.png" alt="2"><br>用上面的配列的话，要补充一些键帽，基本上就要再搞一套键帽，虽放弃。用poker配列，不过还是Samwisekoi配列方便使用一些。<br><img src="http://opy4d6q9k.bkt.clouddn.com/%E9%85%8D%E5%88%971.png" alt="配列"><br>开工：<br><img src="http://opy4d6q9k.bkt.clouddn.com/P70525-124050.jpg" alt="开工"></p>
-<h5 id="装配步骤："><a href="#装配步骤：" class="headerlink" title="装配步骤："></a>装配步骤：</h5><ul>
-<li>主板校核<br>用<a href="http://zhouer.org/KeyboardTest/" target="_blank" rel="external">keyboardtest</a> 校核PCB主板，看各按键是否正常触发（我省略了这步）</li>
-<li>在主板正面上安装卫星轴</li>
-<li>安装钢板</li>
-<li>安装键轴并安装需要调整位置的键轴的键帽（很重要）<br><img src="http://opy4d6q9k.bkt.clouddn.com/5.jpg" alt="键轴1"><br><img src="http://opy4d6q9k.bkt.clouddn.com/106.jpg" alt="键轴2"></li>
-<li>进行键轴的焊接<br><img src="http://opy4d6q9k.bkt.clouddn.com/P70525-143535.jpg" alt="焊接1"></li>
-<li>进行灯的焊接<br>长腿为正极，短腿为负极<br><img src="http://opy4d6q9k.bkt.clouddn.com/P70525-161337.jpg" alt="焊接2"><br>-焊接完毕，进行测试，测试键和灯<br>有一个灯忘记装了，然后又两个键无效，检查是没焊接好，重新焊接。<br><img src="http://opy4d6q9k.bkt.clouddn.com/P70525-161406.jpg" alt="测试"></li>
-<li>安装外壳，安装键帽，完成<br><img src="http://opy4d6q9k.bkt.clouddn.com/P70525-165105.jpg" alt="完成图"></li>
-</ul>
-<p><em>照片未旋转上传至七牛，之后再删除，上传新旋转后的图，引用后，图并未旋转，更改图名，重新上传后，问题解决。</em></p>
+        <p>关于数组的一些“芝士”<br><a id="more"></a><br><strong>矩阵(matrix)</strong><br>矩阵更多的是一个数学上的概念，看维基百科的解释<br>In mathematics, a <strong>matrix</strong> is a rectangular <strong>array</strong> of numbers, symbols, or expressions, arranged in rows and columns.如下 $$2 \times 3$$ 2行(rows)3列(columns)</p>
+<p>$$\left[\begin{matrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{matrix}\right] $$</p>
+<p>The size of a matrix is defined by the number of rows and columns that it contains. A matrix with<strong> m rows</strong> and <strong>n columns</strong> is called an <strong>m × n</strong> matrix or m-by-n matrix, while m and n are called its <strong>dimensions</strong>.<br>Matrices which have a single row are called <strong>row vectors</strong>, and those which have a single column are called <strong>column vectors</strong>.  In some contexts, such as computer algebra programs, it is useful to consider a matrix with no rows or no columns, called an empty matrix. The individual items in an <strong>m × n</strong> matrix A, often denoted by $$\mathbf{a_{i,j}}$$, where max i = m and max j = n, are called its <strong>elements or entries</strong>.<br><strong>数组(array)</strong><br>主要是计算机中的一种数据结构与矩阵基本是等价的Common name for matrix<br><strong>In python</strong><br>列表list就相当于数组，但不同的是list可以保存各种对象，list中的保存的是对象的指针。<br>数组不是python中内置的标配数据结构，但可以通过numpy包在python中使用数组结构<br>numpy matrix 必须是二维的， 但numpy array可以是多维的，matrix是array的一个分支</p>
+<p>####列表(list)<br>list是Python中最基本的数据结构。也即是数组结构<br>序列中的每个元素都分配一个数字 - 它的位置，或索引，第一个索引是0，第二个索引是1，依此类推。<br>Python有6个序列的内置类型，但最常见的是列表和元组。<br>序列都可以进行的操作包括索引，切片，加，乘，检查成员。<br>Python已经内置确定序列的长度以及确定最大和最小的元素的方法。<br>列表作为一个方括号内的逗号分隔值出现。<br>列表的数据项不需要具有相同的类型<br>创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list1=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="number">1</span>,<span class="number">2</span>]</div><div class="line"><span class="keyword">print</span> list1[<span class="number">0</span>]</div></pre></td></tr></table></figure></p>
+<p>####数组(arrary)<br>在numpy中通过array定义数组<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> numpy immport *</div><div class="line">c = array([(x,y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>]])</div><div class="line">print(c)</div><div class="line">&gt;&gt;&gt;</div><div class="line">[[ <span class="number">0</span>  <span class="number">0</span>]</div><div class="line"> [ <span class="number">0</span> <span class="number">-1</span>]</div><div class="line"> [ <span class="number">0</span>  <span class="number">1</span>]</div><div class="line"> [<span class="number">-1</span>  <span class="number">0</span>]</div><div class="line"> [<span class="number">-1</span> <span class="number">-1</span>]</div><div class="line"> [<span class="number">-1</span>  <span class="number">1</span>]</div><div class="line"> [ <span class="number">1</span>  <span class="number">0</span>]</div><div class="line"> [ <span class="number">1</span> <span class="number">-1</span>]</div><div class="line"> [ <span class="number">1</span>  <span class="number">1</span>]]</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(list(c))</div><div class="line">&gt;&gt;&gt;</div><div class="line">[array([<span class="number">0</span>, <span class="number">0</span>]), array([ <span class="number">0</span>, <span class="number">-1</span>]), array([<span class="number">0</span>, <span class="number">1</span>]), array([<span class="number">-1</span>,  <span class="number">0</span>]), array([<span class="number">-1</span>, <span class="number">-1</span>]), array([<span class="number">-1</span>,  <span class="number">1</span>]), array([<span class="number">1</span>, <span class="number">0</span>]), array([ <span class="number">1</span>, <span class="number">-1</span>]), array([<span class="number">1</span>, <span class="number">1</span>])]</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(c.tolist())</div><div class="line">&gt;&gt;&gt;</div><div class="line">[[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">-1</span>], [<span class="number">0</span>, <span class="number">1</span>], [<span class="number">-1</span>, <span class="number">0</span>], [<span class="number">-1</span>, <span class="number">-1</span>], [<span class="number">-1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">-1</span>], [<span class="number">1</span>, <span class="number">1</span>]]</div></pre></td></tr></table></figure>
+<p>关于transpose()函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;print(array([[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]],[[<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>],[<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>]]]))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</div><div class="line">  [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]</div><div class="line">  [<span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]]</div><div class="line">&gt;&gt;&gt;print(arr1.transpose(<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</div><div class="line">  [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</div><div class="line">  [<span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]]</div><div class="line">&gt;&gt;&gt;print(arr1.transpose(<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">4</span>]</div><div class="line">  [ <span class="number">1</span>  <span class="number">5</span>]</div><div class="line">  [ <span class="number">2</span>  <span class="number">6</span>]</div><div class="line">  [ <span class="number">3</span>  <span class="number">7</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">8</span> <span class="number">12</span>]</div><div class="line">  [ <span class="number">9</span> <span class="number">13</span>]</div><div class="line">  [<span class="number">10</span> <span class="number">14</span>]</div><div class="line">  [<span class="number">11</span> <span class="number">15</span>]]]</div><div class="line">&gt;&gt;&gt;print(arr1.transpose(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">8</span>]</div><div class="line">  [ <span class="number">4</span> <span class="number">12</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">1</span>  <span class="number">9</span>]</div><div class="line">  [ <span class="number">5</span> <span class="number">13</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">2</span> <span class="number">10</span>]</div><div class="line">  [ <span class="number">6</span> <span class="number">14</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">3</span> <span class="number">11</span>]</div><div class="line">  [ <span class="number">7</span> <span class="number">15</span>]]]</div></pre></td></tr></table></figure></p>
+<p>arr1是2*2*4维数组；transpose(0,1,2)中的0,1,2分别表示三种维度(2,2,4)</p>
+<p>transpose(1,0,2)表示原第一维度与原第二维度<strong>转置</strong>第三维度保持不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">graph LR</div><div class="line">id1[&quot;[&lt;br&gt;(1)[&lt;br&gt;(1)[0 1 2 3]&lt;br/&gt;(2)[4 5 6 7]]&lt;br/&gt;(2)[&lt;br&gt;(1)[8 9 10 11]&lt;br/&gt;(2)[12 13 14 15]]&lt;br&gt;]&quot;]--矩阵前2维--&gt;id2[&quot;[(1)(1),(1)(2)]&lt;br&gt;[(2)(1),(2)(2)]&quot;]</div><div class="line">id2 --&quot;转置transpose(1,0,2)&quot;--&gt;id3[&quot;[(1)(1),(2)(1)]&lt;br&gt;[(1)(2),(2)(2)]&quot;]</div><div class="line">id3---id4[&quot;[[[ 0  1  2  3]&lt;br&gt;[ 8  9 10 11]]&lt;br&gt;[[ 4  5  6  7]&lt;br&gt;[12 13 14 15]]]&quot;]</div></pre></td></tr></table></figure></p>
+<p>transpose(0,2,1)表示原第二维度与原第三维度<strong>转置</strong>第一维度保持不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">graph LR</div><div class="line">id1[&quot;[&lt;br&gt;(1)[&lt;br&gt;(1)[0 1 2 3]&lt;br/&gt;(2)[4 5 6 7]]&lt;br/&gt;(2)[&lt;br&gt;(1)[8 9 10 11]&lt;br/&gt;(2)[12 13 14 15]]&lt;br&gt;]&quot;]--矩阵后2维2*4--&gt;id2[&quot;(1)[0 1 2 3]&lt;br/&gt;(1)[4 5 6 7]&quot;]</div><div class="line">id1--矩阵后2维2*4--&gt;id3[&quot;(2)[8 9 10 11]&lt;br/&gt;(2)[12 13 14 15]&quot;]</div><div class="line">id2--&quot;transpose(0,2,1)&quot;--&gt;id4[&quot;(1)[0 4]&lt;br&gt;(1)[1 5]&lt;br&gt;(1)[2 6]&lt;br&gt;(1)[3 7]&quot;]</div><div class="line">id3--&quot;transpose(0,2,1)&quot;--&gt;id5[&quot;(2)[8 12]&lt;br&gt;(2)[9 13]&lt;br&gt;(2)[10 14]&lt;br&gt;(2)[11 15]&quot;]</div><div class="line">id4---id6[&quot;[[(1)[0 4]&lt;br&gt;(1)[1 5]&lt;br&gt;(1)[2 6]&lt;br&gt;(1)[3 7]]&lt;br&gt;[(2)[8 12]&lt;br&gt;(2)[9 13]&lt;br&gt;(2)[10 14]&lt;br&gt;(2)[11 15]]]&quot;]</div><div class="line">id5---id6</div></pre></td></tr></table></figure></p>
+<p>transpose(2,1,0)表示原第一维度与原第三维度<strong>转置</strong>第二维度保持不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">graph LR</div><div class="line">id1[&quot;[&lt;br&gt;(1)[&lt;br&gt;(1)[0 1 2 3]&lt;br/&gt;(2)[4 5 6 7]]&lt;br/&gt;(2)[&lt;br&gt;(1)[8 9 10 11]&lt;br/&gt;(2)[12 13 14 15]]&lt;br&gt;]&quot;]</div><div class="line">id1--&gt;id2[&quot;(1)(1)[0 1 2 3]&lt;br&gt;(2)(1)[8 9 10 11]&quot;]</div><div class="line">id1--&gt;id3[&quot;(1)(2)[4 5 6 7]&lt;br&gt;(2)(2)[12 13 14 15]&quot;]</div><div class="line">id2--&quot;transpose(2,1,0)&quot;--&gt;id4[&quot;(1)[0 8]&lt;br&gt;(1)[1 9]&lt;br&gt;(1)[2 10]&lt;br&gt;(1)[3 11]&quot;]</div><div class="line">id3--&quot;transpose(2,1,0)&quot;--&gt;id5[&quot;(2)[4 12]&lt;br&gt;(2)[5 13]&lt;br&gt;(2)[6 14]&lt;br&gt;(2)[7 15]&quot;]</div><div class="line">id4---id6[&quot;[&lt;br&gt;[(1)[0 8]&lt;br&gt;</div><div class="line">  (2)[4 12]]&lt;br&gt;</div><div class="line"> [(1)[1  9]&lt;br&gt;</div><div class="line">  (2)[5 13]]&lt;br&gt;</div><div class="line"> [(1)[2 10]&lt;br&gt;</div><div class="line">  (2)[6 14]]&lt;br&gt;</div><div class="line"> [(1)[3 11]&lt;br&gt;</div><div class="line">  (2)[7 15]]&lt;br&gt;]&quot;]</div><div class="line">  id5---id6</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -465,7 +449,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GH60/" rel="tag"># -GH60</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -478,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/21/17-520/" rel="next" title="Hexo中插入音乐">
-                <i class="fa fa-chevron-left"></i> Hexo中插入音乐
+              <a href="/2018/01/06/18-1-6/" rel="next" title="组会之后">
+                <i class="fa fa-chevron-left"></i> 组会之后
               </a>
             
           </div>
@@ -488,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/13/2017-6-13/" rel="prev" title="闲逛与瞎拍">
-                闲逛与瞎拍 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/12/18-1-12sublime/" rel="prev" title="Sublime text 搭建Python IDE">
+                Sublime text 搭建Python IDE <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,17 +523,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -654,22 +629,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#所需套件列表："><span class="nav-number">1.</span> <span class="nav-text">所需套件列表：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#工具："><span class="nav-number">1.1.</span> <span class="nav-text">工具：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#装配步骤："><span class="nav-number">2.</span> <span class="nav-text">装配步骤：</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -832,7 +791,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 90807, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 90807, xid: "2017/05/23/GH60/"});
+		_hcwp.push({widget:"Stream", widget_id: 90807, xid: "2018/01/12/18-1-12python/"});
 		
 
 		(function() {
