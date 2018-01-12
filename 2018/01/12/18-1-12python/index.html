@@ -99,7 +99,7 @@
 <meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2018/01/12/18-1-12python/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
 <meta property="og:description" content="关于数组的一些“芝士”">
-<meta property="og:updated_time" content="2018-01-12T15:54:01.228Z">
+<meta property="og:updated_time" content="2018-01-12T16:10:57.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于numpy包中数组(array) 矩阵(matrix) 列表(list) 的概念">
 <meta name="twitter:description" content="关于数组的一些“芝士”">
@@ -408,13 +408,13 @@
       
 
       
-        <p>关于数组的一些“芝士”<br><a id="more"></a><br><strong>矩阵(matrix)</strong><br>矩阵更多的是一个数学上的概念，看维基百科的解释<br>In mathematics, a <strong>matrix</strong> is a rectangular <strong>array</strong> of numbers, symbols, or expressions, arranged in rows and columns.如下 $$2 \times 3$$ 2行(rows)3列(columns)</p>
-<p>$$\left[\begin{matrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{matrix}\right] $$</p>
-<p>The size of a matrix is defined by the number of rows and columns that it contains. A matrix with<strong> m rows</strong> and <strong>n columns</strong> is called an <strong>m × n</strong> matrix or m-by-n matrix, while m and n are called its <strong>dimensions</strong>.<br>Matrices which have a single row are called <strong>row vectors</strong>, and those which have a single column are called <strong>column vectors</strong>.  In some contexts, such as computer algebra programs, it is useful to consider a matrix with no rows or no columns, called an empty matrix. The individual items in an <strong>m × n</strong> matrix A, often denoted by $$\mathbf{a_{i,j}}$$, where max i = m and max j = n, are called its <strong>elements or entries</strong>.<br><strong>数组(array)</strong><br>主要是计算机中的一种数据结构与矩阵基本是等价的Common name for matrix<br><strong>In python</strong><br>列表list就相当于数组，但不同的是list可以保存各种对象，list中的保存的是对象的指针。<br>数组不是python中内置的标配数据结构，但可以通过numpy包在python中使用数组结构<br>numpy matrix 必须是二维的， 但numpy array可以是多维的，matrix是array的一个分支</p>
-<p>####列表(list)<br>list是Python中最基本的数据结构。也即是数组结构<br>序列中的每个元素都分配一个数字 - 它的位置，或索引，第一个索引是0，第二个索引是1，依此类推。<br>Python有6个序列的内置类型，但最常见的是列表和元组。<br>序列都可以进行的操作包括索引，切片，加，乘，检查成员。<br>Python已经内置确定序列的长度以及确定最大和最小的元素的方法。<br>列表作为一个方括号内的逗号分隔值出现。<br>列表的数据项不需要具有相同的类型<br>创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list1=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="number">1</span>,<span class="number">2</span>]</div><div class="line"><span class="keyword">print</span> list1[<span class="number">0</span>]</div></pre></td></tr></table></figure></p>
-<p>####数组(arrary)<br>在numpy中通过array定义数组<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> numpy immport *</div><div class="line">c = array([(x,y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>]])</div><div class="line">print(c)</div><div class="line">&gt;&gt;&gt;</div><div class="line">[[ <span class="number">0</span>  <span class="number">0</span>]</div><div class="line"> [ <span class="number">0</span> <span class="number">-1</span>]</div><div class="line"> [ <span class="number">0</span>  <span class="number">1</span>]</div><div class="line"> [<span class="number">-1</span>  <span class="number">0</span>]</div><div class="line"> [<span class="number">-1</span> <span class="number">-1</span>]</div><div class="line"> [<span class="number">-1</span>  <span class="number">1</span>]</div><div class="line"> [ <span class="number">1</span>  <span class="number">0</span>]</div><div class="line"> [ <span class="number">1</span> <span class="number">-1</span>]</div><div class="line"> [ <span class="number">1</span>  <span class="number">1</span>]]</div></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(list(c))</div><div class="line">&gt;&gt;&gt;</div><div class="line">[array([<span class="number">0</span>, <span class="number">0</span>]), array([ <span class="number">0</span>, <span class="number">-1</span>]), array([<span class="number">0</span>, <span class="number">1</span>]), array([<span class="number">-1</span>,  <span class="number">0</span>]), array([<span class="number">-1</span>, <span class="number">-1</span>]), array([<span class="number">-1</span>,  <span class="number">1</span>]), array([<span class="number">1</span>, <span class="number">0</span>]), array([ <span class="number">1</span>, <span class="number">-1</span>]), array([<span class="number">1</span>, <span class="number">1</span>])]</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(c.tolist())</div><div class="line">&gt;&gt;&gt;</div><div class="line">[[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">-1</span>], [<span class="number">0</span>, <span class="number">1</span>], [<span class="number">-1</span>, <span class="number">0</span>], [<span class="number">-1</span>, <span class="number">-1</span>], [<span class="number">-1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">-1</span>], [<span class="number">1</span>, <span class="number">1</span>]]</div></pre></td></tr></table></figure>
+        <p>关于数组的一些“芝士”<br><a id="more"></a><br><strong>矩阵(matrix)</strong><br>矩阵更多的是一个数学上的概念，看维基百科的解释<br>In mathematics, a <strong>matrix</strong> is a rectangular <strong>array</strong> of numbers, symbols, or expressions, arranged in rows and columns.如下 $$ 2 \times 3 $$ 2行(rows)3列(columns)</p>
+<p>$$ \left[\begin{matrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{matrix}\right] $$</p>
+<p>The size of a matrix is defined by the number of rows and columns that it contains. A matrix with<strong> m rows</strong> and <strong>n columns</strong> is called an <strong>m × n</strong> matrix or m-by-n matrix, while m and n are called its <strong>dimensions</strong>.<br>Matrices which have a single row are called <strong>row vectors</strong>, and those which have a single column are called <strong>column vectors</strong>.  In some contexts, such as computer algebra programs, it is useful to consider a matrix with no rows or no columns, called an empty matrix. The individual items in an <strong>m × n</strong> matrix A, often denoted by $$ \mathbf{a_{i,j}} $$, where max i = m and max j = n, are called its <strong>elements or entries</strong>.<br><strong>数组(array)</strong><br>主要是计算机中的一种数据结构与矩阵基本是等价的Common name for matrix<br><strong>In python</strong><br>列表list就相当于数组，但不同的是list可以保存各种对象，list中的保存的是对象的指针。<br>数组不是python中内置的标配数据结构，但可以通过numpy包在python中使用数组结构<br>numpy matrix 必须是二维的， 但numpy array可以是多维的，matrix是array的一个分支</p>
+<h4 id="列表-list"><a href="#列表-list" class="headerlink" title="列表(list)"></a>列表(list)</h4><p>list是Python中最基本的数据结构。也即是数组结构<br>序列中的每个元素都分配一个数字 - 它的位置，或索引，第一个索引是0，第二个索引是1，依此类推。<br>Python有6个序列的内置类型，但最常见的是列表和元组。<br>序列都可以进行的操作包括索引，切片，加，乘，检查成员。<br>Python已经内置确定序列的长度以及确定最大和最小的元素的方法。<br>列表作为一个方括号内的逗号分隔值出现。<br>列表的数据项不需要具有相同的类型<br>创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list1=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="number">1</span>,<span class="number">2</span>]</div><div class="line"><span class="keyword">print</span> list1[<span class="number">0</span>]</div></pre></td></tr></table></figure></p>
+<h4 id="数组-arrary"><a href="#数组-arrary" class="headerlink" title="数组(arrary)"></a>数组(arrary)</h4><p>在numpy中通过array定义数组<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</div><div class="line">c = array([(x,y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>]])</div><div class="line">&gt;&gt;&gt;print(c)</div><div class="line">[[ <span class="number">0</span>  <span class="number">0</span>]</div><div class="line"> [ <span class="number">0</span> <span class="number">-1</span>]</div><div class="line"> [ <span class="number">0</span>  <span class="number">1</span>]</div><div class="line"> [<span class="number">-1</span>  <span class="number">0</span>]</div><div class="line"> [<span class="number">-1</span> <span class="number">-1</span>]</div><div class="line"> [<span class="number">-1</span>  <span class="number">1</span>]</div><div class="line"> [ <span class="number">1</span>  <span class="number">0</span>]</div><div class="line"> [ <span class="number">1</span> <span class="number">-1</span>]</div><div class="line"> [ <span class="number">1</span>  <span class="number">1</span>]]</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;print(list(c))</div><div class="line">[array([<span class="number">0</span>, <span class="number">0</span>]), array([ <span class="number">0</span>, <span class="number">-1</span>]), array([<span class="number">0</span>, <span class="number">1</span>]), array([<span class="number">-1</span>,  <span class="number">0</span>]), array([<span class="number">-1</span>, <span class="number">-1</span>]), array([<span class="number">-1</span>,  <span class="number">1</span>]), array([<span class="number">1</span>, <span class="number">0</span>]), array([ <span class="number">1</span>, <span class="number">-1</span>]), array([<span class="number">1</span>, <span class="number">1</span>])]</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;print(c.tolist())</div><div class="line">[[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">-1</span>], [<span class="number">0</span>, <span class="number">1</span>], [<span class="number">-1</span>, <span class="number">0</span>], [<span class="number">-1</span>, <span class="number">-1</span>], [<span class="number">-1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">-1</span>], [<span class="number">1</span>, <span class="number">1</span>]]</div></pre></td></tr></table></figure>
 <p>关于transpose()函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;print(array([[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]],[[<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>],[<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>]]]))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</div><div class="line">  [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]</div><div class="line">  [<span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]]</div><div class="line">&gt;&gt;&gt;print(arr1.transpose(<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</div><div class="line">  [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</div><div class="line">  [<span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]]</div><div class="line">&gt;&gt;&gt;print(arr1.transpose(<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">4</span>]</div><div class="line">  [ <span class="number">1</span>  <span class="number">5</span>]</div><div class="line">  [ <span class="number">2</span>  <span class="number">6</span>]</div><div class="line">  [ <span class="number">3</span>  <span class="number">7</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">8</span> <span class="number">12</span>]</div><div class="line">  [ <span class="number">9</span> <span class="number">13</span>]</div><div class="line">  [<span class="number">10</span> <span class="number">14</span>]</div><div class="line">  [<span class="number">11</span> <span class="number">15</span>]]]</div><div class="line">&gt;&gt;&gt;print(arr1.transpose(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">8</span>]</div><div class="line">  [ <span class="number">4</span> <span class="number">12</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">1</span>  <span class="number">9</span>]</div><div class="line">  [ <span class="number">5</span> <span class="number">13</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">2</span> <span class="number">10</span>]</div><div class="line">  [ <span class="number">6</span> <span class="number">14</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">3</span> <span class="number">11</span>]</div><div class="line">  [ <span class="number">7</span> <span class="number">15</span>]]]</div></pre></td></tr></table></figure></p>
 <p>arr1是2*2*4维数组；transpose(0,1,2)中的0,1,2分别表示三种维度(2,2,4)</p>
 <p>transpose(1,0,2)表示原第一维度与原第二维度<strong>转置</strong>第三维度保持不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">graph LR</div><div class="line">id1[&quot;[&lt;br&gt;(1)[&lt;br&gt;(1)[0 1 2 3]&lt;br/&gt;(2)[4 5 6 7]]&lt;br/&gt;(2)[&lt;br&gt;(1)[8 9 10 11]&lt;br/&gt;(2)[12 13 14 15]]&lt;br&gt;]&quot;]--矩阵前2维--&gt;id2[&quot;[(1)(1),(1)(2)]&lt;br&gt;[(2)(1),(2)(2)]&quot;]</div><div class="line">id2 --&quot;转置transpose(1,0,2)&quot;--&gt;id3[&quot;[(1)(1),(2)(1)]&lt;br&gt;[(1)(2),(2)(2)]&quot;]</div><div class="line">id3---id4[&quot;[[[ 0  1  2  3]&lt;br&gt;[ 8  9 10 11]]&lt;br&gt;[[ 4  5  6  7]&lt;br&gt;[12 13 14 15]]]&quot;]</div></pre></td></tr></table></figure></p>
@@ -462,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/06/18-1-6/" rel="next" title="组会之后">
-                <i class="fa fa-chevron-left"></i> 组会之后
+              <a href="/2018/01/12/18-1-12sublime/" rel="next" title="Sublime text 搭建Python IDE">
+                <i class="fa fa-chevron-left"></i> Sublime text 搭建Python IDE
               </a>
             
           </div>
@@ -471,10 +471,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/12/18-1-12sublime/" rel="prev" title="Sublime text 搭建Python IDE">
-                Sublime text 搭建Python IDE <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -629,6 +634,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表-list"><span class="nav-number">1.</span> <span class="nav-text">列表(list)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组-arrary"><span class="nav-number">2.</span> <span class="nav-text">数组(arrary)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -929,13 +950,33 @@
         showTime(Counter);
       }
     });
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
