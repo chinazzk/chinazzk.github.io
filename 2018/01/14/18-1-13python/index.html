@@ -92,21 +92,19 @@
 
 
 
-<meta name="description" content="关于数组的一些“芝士”">
+<meta name="description" content="2D flow around a cylinder  数值过程">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于numpy包中数组(array)的操作">
-<meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2018/01/12/18-1-12python/index.html">
+<meta property="og:title" content="关于2D绕柱流的Lattice Boltzmann Method">
+<meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2018/01/14/18-1-13python/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
-<meta property="og:description" content="关于数组的一些“芝士”">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B71.PNG">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B72.PNG">
-<meta property="og:image" content="http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B73.PNG">
-<meta property="og:updated_time" content="2018-01-12T16:58:41.468Z">
+<meta property="og:description" content="2D flow around a cylinder  数值过程">
+<meta property="og:image" content="e:/blog.zzk/pictures/velocity.png">
+<meta property="og:updated_time" content="2018-01-13T19:42:41.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于numpy包中数组(array)的操作">
-<meta name="twitter:description" content="关于数组的一些“芝士”">
-<meta name="twitter:image" content="http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B71.PNG">
+<meta name="twitter:title" content="关于2D绕柱流的Lattice Boltzmann Method">
+<meta name="twitter:description" content="2D flow around a cylinder  数值过程">
+<meta name="twitter:image" content="e:/blog.zzk/pictures/velocity.png">
 
 
 
@@ -134,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/chinazzk/chinazzk.github.io/2018/01/12/18-1-12python/"/>
+  <link rel="canonical" href="https://github.com/chinazzk/chinazzk.github.io/2018/01/14/18-1-13python/"/>
 
 
 
 
 
-  <title>关于numpy包中数组(array)的操作 | ALL YOU WANT IS TOO MUCH</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>关于2D绕柱流的Lattice Boltzmann Method | ALL YOU WANT IS TOO MUCH</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +296,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/chinazzk/chinazzk.github.io/2018/01/12/18-1-12python/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/chinazzk/chinazzk.github.io/2018/01/14/18-1-13python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="PLANET">
@@ -315,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于numpy包中数组(array)的操作</h1>
+          <h1 class="post-title" itemprop="name headline">关于2D绕柱流的Lattice Boltzmann Method</h1>
         
 
         <div class="post-meta">
@@ -327,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-12T22:49:53+08:00">
-                2018-01-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-14T22:49:53+08:00">
+                2018-01-14
               </time>
             
 
@@ -369,8 +367,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/12/18-1-12python/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/12/18-1-12python/" itemprop="commentsCount"></span>
+                <a href="/2018/01/14/18-1-13python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/14/18-1-13python/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -379,7 +377,7 @@
 
           
           
-             <span id="/2018/01/12/18-1-12python/" class="leancloud_visitors" data-flag-title="关于numpy包中数组(array)的操作">
+             <span id="/2018/01/14/18-1-13python/" class="leancloud_visitors" data-flag-title="关于2D绕柱流的Lattice Boltzmann Method">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,17 +410,44 @@
       
 
       
-        <p>关于数组的一些“芝士”<br><a id="more"></a><br><strong>矩阵(matrix)</strong><br>矩阵更多的是一个数学上的概念，看维基百科的解释<br>In mathematics, a <strong>matrix</strong> is a rectangular <strong>array</strong> of numbers, symbols, or expressions, arranged in rows and columns.如下 $ 2 \times 3 $ 2行(rows)3列(columns)</p>
-<p>$$ \left[\begin{matrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{matrix}\right] $$</p>
-<p>The size of a matrix is defined by the number of rows and columns that it contains. A matrix with<strong> m rows</strong> and <strong>n columns</strong> is called an <strong>m × n</strong> matrix or m-by-n matrix, while m and n are called its <strong>dimensions</strong>.<br>Matrices which have a single row are called <strong>row vectors</strong>, and those which have a single column are called <strong>column vectors</strong>.  In some contexts, such as computer algebra programs, it is useful to consider a matrix with no rows or no columns, called an empty matrix. The individual items in an <strong>m × n</strong> matrix A, often denoted by $ \mathbf{a_{i,j}} $, where max i = m and max j = n, are called its <strong>elements or entries</strong>.<br><strong>数组(array)</strong><br>主要是计算机中的一种数据结构与矩阵基本是等价的Common name for matrix<br><strong>In python</strong><br>列表list就相当于数组，但不同的是list可以保存各种对象，list中的保存的是对象的指针。<br>数组不是python中内置的标配数据结构，但可以通过numpy包在python中使用数组结构<br>numpy matrix 必须是二维的， 但numpy array可以是多维的，matrix是array的一个分支</p>
-<h4 id="列表-list"><a href="#列表-list" class="headerlink" title="列表(list)"></a>列表(list)</h4><p>list是Python中最基本的数据结构。也即是数组结构<br>序列中的每个元素都分配一个数字 - 它的位置，或索引，第一个索引是0，第二个索引是1，依此类推。<br>Python有6个序列的内置类型，但最常见的是列表和元组。<br>序列都可以进行的操作包括索引，切片，加，乘，检查成员。<br>Python已经内置确定序列的长度以及确定最大和最小的元素的方法。<br>列表作为一个方括号内的逗号分隔值出现。<br>列表的数据项不需要具有相同的类型<br>创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list1=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="number">1</span>,<span class="number">2</span>]</div><div class="line"><span class="keyword">print</span> list1[<span class="number">0</span>]</div></pre></td></tr></table></figure></p>
-<h4 id="数组-arrary"><a href="#数组-arrary" class="headerlink" title="数组(arrary)"></a>数组(arrary)</h4><p>在numpy中通过array定义数组<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</div><div class="line">c = array([(x,y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>]])</div><div class="line">&gt;&gt;&gt;print(c)</div><div class="line">[[ <span class="number">0</span>  <span class="number">0</span>]</div><div class="line"> [ <span class="number">0</span> <span class="number">-1</span>]</div><div class="line"> [ <span class="number">0</span>  <span class="number">1</span>]</div><div class="line"> [<span class="number">-1</span>  <span class="number">0</span>]</div><div class="line"> [<span class="number">-1</span> <span class="number">-1</span>]</div><div class="line"> [<span class="number">-1</span>  <span class="number">1</span>]</div><div class="line"> [ <span class="number">1</span>  <span class="number">0</span>]</div><div class="line"> [ <span class="number">1</span> <span class="number">-1</span>]</div><div class="line"> [ <span class="number">1</span>  <span class="number">1</span>]]</div></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;print(list(c))</div><div class="line">[array([<span class="number">0</span>, <span class="number">0</span>]), array([ <span class="number">0</span>, <span class="number">-1</span>]), array([<span class="number">0</span>, <span class="number">1</span>]), array([<span class="number">-1</span>,  <span class="number">0</span>]), array([<span class="number">-1</span>, <span class="number">-1</span>]), array([<span class="number">-1</span>,  <span class="number">1</span>]), array([<span class="number">1</span>, <span class="number">0</span>]), array([ <span class="number">1</span>, <span class="number">-1</span>]), array([<span class="number">1</span>, <span class="number">1</span>])]</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;print(c.tolist())</div><div class="line">[[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">-1</span>], [<span class="number">0</span>, <span class="number">1</span>], [<span class="number">-1</span>, <span class="number">0</span>], [<span class="number">-1</span>, <span class="number">-1</span>], [<span class="number">-1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">-1</span>], [<span class="number">1</span>, <span class="number">1</span>]]</div></pre></td></tr></table></figure>
-<p>关于transpose()函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;print(array([[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]],[[<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>],[<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>]]]))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</div><div class="line">  [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]</div><div class="line">  [<span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]]</div><div class="line">&gt;&gt;&gt;print(arr1.transpose(<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</div><div class="line">  [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</div><div class="line">  [<span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]]</div><div class="line">&gt;&gt;&gt;print(arr1.transpose(<span class="number">0</span>,<span class="number">2</span>,<span class="number">1</span>))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">4</span>]</div><div class="line">  [ <span class="number">1</span>  <span class="number">5</span>]</div><div class="line">  [ <span class="number">2</span>  <span class="number">6</span>]</div><div class="line">  [ <span class="number">3</span>  <span class="number">7</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">8</span> <span class="number">12</span>]</div><div class="line">  [ <span class="number">9</span> <span class="number">13</span>]</div><div class="line">  [<span class="number">10</span> <span class="number">14</span>]</div><div class="line">  [<span class="number">11</span> <span class="number">15</span>]]]</div><div class="line">&gt;&gt;&gt;print(arr1.transpose(<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>))</div><div class="line">[[[ <span class="number">0</span>  <span class="number">8</span>]</div><div class="line">  [ <span class="number">4</span> <span class="number">12</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">1</span>  <span class="number">9</span>]</div><div class="line">  [ <span class="number">5</span> <span class="number">13</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">2</span> <span class="number">10</span>]</div><div class="line">  [ <span class="number">6</span> <span class="number">14</span>]]</div><div class="line"></div><div class="line"> [[ <span class="number">3</span> <span class="number">11</span>]</div><div class="line">  [ <span class="number">7</span> <span class="number">15</span>]]]</div></pre></td></tr></table></figure></p>
-<p>arr1是2*2*4维数组；transpose(0,1,2)中的0,1,2分别表示三种维度(2,2,4)</p>
-<p>transpose(1,0,2)表示原第一维度与原第二维度<strong>转置</strong>第三维度保持不变<br><img src="http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B71.PNG" alt="1"><br>transpose(0,2,1)表示原第二维度与原第三维度<strong>转置</strong>第一维度保持不变<br><img src="http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B72.PNG" alt="2"><br>transpose(2,1,0)表示原第一维度与原第三维度<strong>转置</strong>第二维度保持不变<br><img src="http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B73.PNG" alt="3"></p>
-
+        <p>2D flow around a cylinder  数值过程<br><a id="more"></a><br><strong>flow definition</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Total number of time iterations.</span></div><div class="line">maxIter = <span class="number">200000</span> </div><div class="line">Re = <span class="number">220.0</span>  </div><div class="line"><span class="comment"># Lattice dimensions and populations. D2Q9</span></div><div class="line">nx = <span class="number">520</span></div><div class="line">ny = <span class="number">180</span></div><div class="line">ly=ny<span class="number">-1.0</span> </div><div class="line">q = <span class="number">9</span> </div><div class="line"><span class="comment"># Coordinates of the cylinder.</span></div><div class="line">cx = nx/<span class="number">4</span></div><div class="line">cy=ny/<span class="number">2</span></div><div class="line">r=ny/<span class="number">9</span>  </div><div class="line"><span class="comment"># Velocity in lattice units. </span></div><div class="line">uLB= <span class="number">0.04</span></div></pre></td></tr></table></figure></p>
+<p>$u_{lattice}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nulb    = uLB*r/Re</div></pre></td></tr></table></figure>
+<p>$\nu=u_{lattice}r/Re$ 这里取圆柱半径为特征长度<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">omega = <span class="number">1.0</span> / (<span class="number">3.</span>*nulb+<span class="number">0.5</span>)</div></pre></td></tr></table></figure></p>
+<p>$\omega=\frac{1}{3\nu+0.5}$</p>
+<p><strong>Lattice Constants</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c = array([(x,y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>]])</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[[ <span class="number">0</span>  <span class="number">0</span>]    <span class="number">0</span></div><div class="line"> [ <span class="number">0</span> <span class="number">-1</span>]    <span class="number">1</span></div><div class="line"> [ <span class="number">0</span>  <span class="number">1</span>]    <span class="number">2</span></div><div class="line"> [<span class="number">-1</span>  <span class="number">0</span>]    <span class="number">3</span></div><div class="line"> [<span class="number">-1</span> <span class="number">-1</span>]    <span class="number">4</span></div><div class="line"> [<span class="number">-1</span>  <span class="number">1</span>]    <span class="number">5</span></div><div class="line"> [ <span class="number">1</span>  <span class="number">0</span>]    <span class="number">6</span></div><div class="line"> [ <span class="number">1</span> <span class="number">-1</span>]    <span class="number">7</span></div><div class="line"> [ <span class="number">1</span>  <span class="number">1</span>]]   <span class="number">8</span></div></pre></td></tr></table></figure>
+<p>c是一个二维数组$c_{i[x,y]}$ $c=\begin{bmatrix}c[1]=[0&amp;0]\\c[2]=[0&amp;-1]\\c[3]=[0&amp;1]\\c[4]=[-1&amp;0]\\c[5]=[-1&amp;-1]\\c[6]=[-1&amp;1]\\c[7]=[1&amp;0]\\c[8]=[1&amp;-1]\\c[9]=[1&amp;1]\end{bmatrix}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Lattice weights. ones()构造全1数组</span></div><div class="line">t = <span class="number">1.</span>/<span class="number">36.</span> * ones(q) </div><div class="line"><span class="comment"># 范数小于1.1 返回True 赋值1/9</span></div><div class="line">t[asarray([norm(ci)&lt;<span class="number">1.1</span> <span class="keyword">for</span> ci <span class="keyword">in</span> c])] = <span class="number">1.</span>/<span class="number">9.</span>         </div><div class="line">t[<span class="number">0</span>] = <span class="number">4.</span>/<span class="number">9.</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[ <span class="number">0.44444444</span>  <span class="number">0.11111111</span>  <span class="number">0.11111111</span>  <span class="number">0.11111111</span>  <span class="number">0.02777778</span>  <span class="number">0.02777778</span>  <span class="number">0.11111111</span>  <span class="number">0.02777778</span>  <span class="number">0.02777778</span>]</div></pre></td></tr></table></figure>
+<p>$w_i=\begin {bmatrix}w[0]=\frac{4}{9} \\w[1]=\frac{1}{9} \\w[2]=\frac{1}{9}\\ w[3]=\frac{1}{9}\\ w[4]=\frac{1}{36}\\ w[5]=\frac{1}{36}\\ w[6]=\frac{1}{9}\\ w[7]=\frac{1}{36}\\ w[8]=\frac{1}{36} \end{bmatrix}$<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## [(-c[i]).tolist() for i in range(q)] 为list  将-c转换为list获取指标</span></div><div class="line">noslip = [c.tolist().index((-c[i]).tolist()) <span class="keyword">for</span> i <span class="keyword">in</span> range(q)] </div><div class="line"><span class="string">'''[0,2,1,6,8,7,3,5,4]'''</span></div></pre></td></tr></table></figure></p>
+<p>$-c=\begin{bmatrix}c[1]=[0&amp;0]\\c[3]=[0&amp;1]\\c[2]=[0&amp;-1]\\c[7]=[1&amp;0]\\c[9]=[1&amp;1]\\c[8]=[1&amp;-1]\\c[4]=[-1&amp;0]\\c[6]=[-1&amp;1]\\c[5]=[-1&amp;-1]\end{bmatrix}​$<br>求-c的list中的元素在list c 中的指针<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Unknown on right wall.[3 4 5]</span></div><div class="line">i1 = arange(q)[asarray([ci[<span class="number">0</span>]&lt;<span class="number">0</span>  <span class="keyword">for</span> ci <span class="keyword">in</span> c])]</div><div class="line"><span class="comment"># Vertical middle.[0 1 2]</span></div><div class="line">i2 = arange(q)[asarray([ci[<span class="number">0</span>]==<span class="number">0</span> <span class="keyword">for</span> ci <span class="keyword">in</span> c])] </div><div class="line"><span class="comment"># Unknown on left wall.[6 7 8]</span></div><div class="line">i3 = arange(q)[asarray([ci[<span class="number">0</span>]&gt;<span class="number">0</span>  <span class="keyword">for</span> ci <span class="keyword">in</span> c])]</div></pre></td></tr></table></figure></p>
+<p><img src="E:\blog.zzk\pictures\velocity.png" alt="1"></p>
+<p><strong>Function Definitions</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Helper function for density computation.</span></div><div class="line">sumpop = <span class="keyword">lambda</span> fin: sum(fin,axis=<span class="number">0</span>) </div><div class="line"><span class="string">'''fin为入口参数 sum(fin,axis=0) 为函数体 axis=0 为fin把第一维度相加'''</span></div></pre></td></tr></table></figure></p>
+<p>$\sum \limits_{i=0}^8 f_{i,nx,ny}$<br>$fin=\begin{bmatrix}f_0\begin{bmatrix}\ast &amp;n_y&amp;\cdots &amp;\ast&amp;\ast\\n_x&amp;\ast&amp;\cdots &amp;\ast&amp;\ast \\ \vdots &amp; \vdots&amp;\ddots &amp;\vdots&amp;\vdots\\ \ast&amp;\ast&amp;\cdots&amp;\ast&amp;\ast\\ \end{bmatrix}\\f_1\begin{bmatrix}\ast&amp;n_y&amp;\cdots &amp;\ast&amp;\ast\\n_x&amp;\ast&amp;\cdots &amp;\ast&amp;\ast\\ \vdots &amp; \vdots&amp;\ddots &amp;\vdots&amp;\vdots\\ \ast&amp;\ast&amp;\cdots&amp;\ast&amp;\ast\\ \end{bmatrix}\\ \vdots\\f_8\begin{bmatrix}\ast&amp;n_y&amp;\cdots &amp;\ast&amp;\ast\\n_x&amp;\ast&amp;\cdots &amp;\ast&amp;\ast\\ \vdots &amp; \vdots&amp;\ddots &amp;\vdots&amp;\vdots\\ \ast&amp;\ast&amp;\cdots&amp;\ast&amp;\ast\\ \end{bmatrix}\end{bmatrix}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Equilibrium distribution function.</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">equilibrium</span><span class="params">(rho,u)</span>:</span> </div><div class="line">cu   = <span class="number">3.0</span> * dot(c,u.transpose(<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>))</div></pre></td></tr></table></figure>
+<p>$\frac{c_k\cdot \vec{u}}{c_s^2}$<br>$cu[9,nx,ny]=\begin{bmatrix}c[1]=[0&amp;0]\\c[2]=[0&amp;-1]\\c[3]=[0&amp;1]\\c[4]=[-1&amp;0]\\c[5]=[-1&amp;-1]\\c[6]=[-1&amp;1]\\c[7]=[1&amp;0]\\c[8]=[1&amp;-1]\\c[9]=[1&amp;1]\end{bmatrix}{\begin{bmatrix}u_i\begin{bmatrix}\ast&amp;n_y&amp;\cdots &amp;\ast&amp;\ast\\n_x&amp;\ast&amp;\cdots &amp;\ast&amp;\ast\\ \vdots &amp; \vdots&amp;\ddots &amp;\vdots&amp;\vdots\\ \ast&amp;\ast&amp;\cdots&amp;\ast&amp;\ast\\ \end{bmatrix}u_j\begin{bmatrix}\ast&amp;n_y&amp;\cdots &amp;\ast&amp;\ast\\n_x&amp;\ast&amp;\cdots &amp;\ast&amp;\ast\\ \vdots &amp; \vdots&amp;\ddots &amp;\vdots&amp;\vdots\\ \ast&amp;\ast&amp;\cdots&amp;\ast&amp;\ast\\ \end{bmatrix}\end{bmatrix}}^\intercal$</p>
+<p>$\vec{u}=\frac{1}{\rho}\sum \limits_{k=0}^8 f_k c_k$<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">usqr = <span class="number">3.</span>/<span class="number">2.</span>*(u[<span class="number">0</span>]**<span class="number">2</span>+u[<span class="number">1</span>]**<span class="number">2</span>)</div></pre></td></tr></table></figure></p>
+<p>$usqr[nx,ny]$</p>
+<p>$\frac{1}{2} \frac{  \vec{u} ^2 }{c_s^2}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 初始化数组</span></div><div class="line">feq = zeros((q,nx,ny)) </div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(q): feq[i,:,:] = rho*t[i]*(<span class="number">1.</span>+cu[i]+<span class="number">0.5</span>*cu[i]**<span class="number">2</span>-usqr)</div><div class="line"><span class="keyword">return</span> feq</div></pre></td></tr></table></figure>
+<p>$f_k^{eq}= \rho w_k \left[ 1+\frac{c_k \cdot \vec{u}}{c_s^2}+\frac{1}{2} (\frac{c_k\cdot \vec{u}}{c_s^2})^2-\frac{1}{2}\frac{\vec{u}^2}{c_s^2}\right]$</p>
+<p><strong>Setup: cylindrical obstacle and velocity inlet with perturbation</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 无流动区域</span></div><div class="line">obstacle = fromfunction(<span class="keyword">lambda</span> x,y: (x-cx)**<span class="number">2</span>+(y-cy)**<span class="number">2</span>&lt;r**<span class="number">2</span>, (nx,ny))</div></pre></td></tr></table></figure></p>
+<p>$(x-cx)^2+(y-cy)^2<r^2$ <figure="" class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># d = 0 1 表示流速仅x方向</span></div><div class="line">vel = fromfunction(<span class="keyword">lambda</span> d,x,y: (<span class="number">1</span>-d)*uLB*(<span class="number">1.0</span>+<span class="number">1e-4</span>*sin(y/ly*<span class="number">2</span>*pi)),(<span class="number">2</span>,nx,ny))</div></pre></td></tr></table></r^2$></p>
+<p>$u_x=u_{lattice}(1+0.0001\ast sin(2\pi\frac{y}{ny-1}))$</p>
+<p>$vel[2,nx,ny]$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#初始化？</span></div><div class="line">feq = equilibrium(<span class="number">1.0</span>,vel)</div><div class="line">fin = feq.copy()</div></pre></td></tr></table></figure>
+<p><strong>Main time loop</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> time <span class="keyword">in</span> range(maxIter):</div><div class="line">  <span class="comment"># Right wall: outflow condition.[3 4 5] 出口边界条件open boundary condition</span></div><div class="line">  fin[i1,<span class="number">-1</span>,:] = fin[i1,<span class="number">-2</span>,:]</div></pre></td></tr></table></figure>
+<p>$f_{3,nx}=f_{3,nx-1}\\f_{4,nx}=f_{4,nx-1}\\f_{5,nx}=f_{5,nx-1}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Calculate macroscopic density and velocity.</span></div><div class="line">rho = sumpop(fin)</div></pre></td></tr></table></figure>
+<p>$\rho=\sum \limits_{i=0}^8f_i$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#  该行重要</span></div><div class="line">u = dot(c.transpose(), fin.transpose((<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>)))/rho</div></pre></td></tr></table></figure>
+<p>$c[2,9]fin[520,9,190]$<br>${\begin{bmatrix}c[1]=[0&amp;0]\\c[2]=[0&amp;-1]\\c[3]=[0&amp;1]\\c[4]=[-1&amp;0]\\c[5]=[-1&amp;-1]\\c[6]=[-1&amp;1]\\c[7]=[1&amp;0]\\c[8]=[1&amp;-1]\\c[9]=[1&amp;1]\end{bmatrix}}^\intercal {\begin{bmatrix}f_0\begin{bmatrix}\ast &amp;n_y&amp;\cdots &amp;\ast&amp;\ast\\n_x&amp;\ast&amp;\cdots &amp;\ast&amp;\ast \\ \vdots &amp; \vdots&amp;\ddots &amp;\vdots&amp;\vdots\\ \ast&amp;\ast&amp;\cdots&amp;\ast&amp;\ast\\ \end{bmatrix}\\f_1\begin{bmatrix}\ast&amp;n_y&amp;\cdots &amp;\ast&amp;\ast\\n_x&amp;\ast&amp;\cdots &amp;\ast&amp;\ast\\ \vdots &amp; \vdots&amp;\ddots &amp;\vdots&amp;\vdots\\ \ast&amp;\ast&amp;\cdots&amp;\ast&amp;\ast\\ \end{bmatrix}\\ \vdots\\f_8\begin{bmatrix}\ast&amp;n_y&amp;\cdots &amp;\ast&amp;\ast\\n_x&amp;\ast&amp;\cdots &amp;\ast&amp;\ast\\ \vdots &amp; \vdots&amp;\ddots &amp;\vdots&amp;\vdots\\ \ast&amp;\ast&amp;\cdots&amp;\ast&amp;\ast\\ \end{bmatrix}\end{bmatrix}}^\intercal​$</p>
+<p>$\vec{u}=\frac{1}{\rho}\sum \limits_{k=0}^8 f_k c_k$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Left wall: compute density from known populations.BC with known velocity</span></div><div class="line">u[:,<span class="number">0</span>,:] =vel[:,<span class="number">0</span>,:] </div><div class="line">rho[<span class="number">0</span>,:] = <span class="number">1.</span>/(<span class="number">1.</span>-u[<span class="number">0</span>,<span class="number">0</span>,:]) * (sumpop(fin[i2,<span class="number">0</span>,:])+<span class="number">2.</span>*sumpop(fin[i1,<span class="number">0</span>,:]))</div></pre></td></tr></table></figure>
+<p>$\rho _w=\frac{1}{1-u_w}[f_0+f_1+f_2+2(f_3+f_4+f_5)]$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Left wall: Zou/He boundary condition.</span></div><div class="line">feq = equilibrium(rho,u) <span class="comment"># 通过式计算feq</span></div><div class="line">fin[i3,<span class="number">0</span>,:] = fin[i1,<span class="number">0</span>,:] + feq[i3,<span class="number">0</span>,:] - fin[i1,<span class="number">0</span>,:] <span class="comment"># 存疑？</span></div></pre></td></tr></table></figure>
       
     </div>
 
@@ -464,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/12/18-1-12sublime/" rel="next" title="Sublime text 搭建Python IDE">
-                <i class="fa fa-chevron-left"></i> Sublime text 搭建Python IDE
+              <a href="/2018/01/12/18-1-12python/" rel="next" title="关于numpy包中数组(array)的操作">
+                <i class="fa fa-chevron-left"></i> 关于numpy包中数组(array)的操作
               </a>
             
           </div>
@@ -473,10 +498,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/14/18-1-13python/" rel="prev" title="关于2D绕柱流的Lattice Boltzmann Method">
-                关于2D绕柱流的Lattice Boltzmann Method <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -525,17 +546,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -640,22 +652,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表-list"><span class="nav-number">1.</span> <span class="nav-text">列表(list)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组-arrary"><span class="nav-number">2.</span> <span class="nav-text">数组(arrary)</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -818,7 +814,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 90807, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 90807, xid: "2018/01/12/18-1-12python/"});
+		_hcwp.push({widget:"Stream", widget_id: 90807, xid: "2018/01/14/18-1-13python/"});
 		
 
 		(function() {
