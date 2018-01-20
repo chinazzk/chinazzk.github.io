@@ -1,0 +1,1076 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="VI7236dgtmVQ1efqqXRWQFcDFdtqYvS-m0K__MHG3BU" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="内容摘自《Building Skills in Python》 by Steven F. Lott   Begin with page259">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Python中类的学习">
+<meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2018/01/20/18-1-20python-class/index.html">
+<meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
+<meta property="og:description" content="内容摘自《Building Skills in Python》 by Steven F. Lott   Begin with page259">
+<meta property="og:updated_time" content="2018-01-20T09:24:44.229Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于Python中类的学习">
+<meta name="twitter:description" content="内容摘自《Building Skills in Python》 by Steven F. Lott   Begin with page259">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/chinazzk/chinazzk.github.io/2018/01/20/18-1-20python-class/"/>
+
+
+
+
+
+  <title>关于Python中类的学习 | ALL YOU WANT IS TOO MUCH</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-99079404-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?afd1ecb422c1215320a4486f87126ce2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ALL YOU WANT IS TOO MUCH</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">keep it simple and real</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/chinazzk/chinazzk.github.io/2018/01/20/18-1-20python-class/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="PLANET">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ALL YOU WANT IS TOO MUCH">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于Python中类的学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T22:49:53+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Research/" itemprop="url" rel="index">
+                    <span itemprop="name">Research</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/20/18-1-20python-class/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/20/18-1-20python-class/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2018/01/20/18-1-20python-class/" class="leancloud_visitors" data-flag-title="关于Python中类的学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>内容摘自《Building Skills in Python》 by Steven F. Lott   Begin with page259<br><a id="more"></a></p>
+<h5 id="CLASSES"><a href="#CLASSES" class="headerlink" title="CLASSES"></a>CLASSES</h5><p>Object-oriented programming permits us to organize our programs around the interactions of objects. <strong>A class provides the definition of the structure and behavior of the objects; each object is an instance of a class. </strong>Consequently, a typical program is a number of class definitions and a final main function. The main function <strong>creates the objects</strong> that will perform the job of the program.</p>
+<h5 id="1-Semantics"><a href="#1-Semantics" class="headerlink" title="1.Semantics"></a>1.Semantics</h5><p><strong>Define the semantics of objects and the classes which define their attributes (instance variables) and behaviors.</strong></p>
+<p>An object is said to <em>encapsulate</em> a state of being and a set of behaviors; it is both data and processing. Each instance of a class has individual copies of attributes which are tightly coupled with the <em>class-wide operations</em>. Understanding objects by looking at four features.</p>
+<ul>
+<li><strong>Identity</strong>  Each object is unique and is distinguishable from all other objects. In the real world, two otherwise identical coffee cups can be distiguished as distinct objects. For example, they occupy different locations on our desk. In the world of a computer’s memory, <em>objects could be identified by their address</em>, which would make them unique.</li>
+<li><strong>Classification</strong> This is sometimes called Encapsulation(封装). Objects with the same attributes and behavior belong to a common class. Each individual object has unique attribute values. We saw this when we looked at the various collection classes. Two different <em>list</em> objects have the same general structure, and the same behavior. Both lists respond to append(), pop(), and all of the other methods of a list. However, each list object has a unique sequence of values.</li>
+<li><strong>Inheritance</strong>  A class can inherit methods from a parent class, reusing(再利用) common features. A superclass is more general, a subclass overrides(重写 无视？) superclass features, and is more specific.</li>
+<li><strong>Polymorphism(多态多形)</strong>  A general operation can have variant implementation(实现) methods，depending on the class of the object. We saw this when we noted that almost every class on Python has a + operation. Between two floating-point numbers the + operation adds the numbers, between two lists, however,the + operation concatenates the lists.</li>
+</ul>
+<p><strong>Python’s Implementation.</strong>  </p>
+<p>A class is the Python-language definition of the features of individual objects: the names of the attributes and definitions of the operations. Python implements the general notion of attribute as a dictionary of instance variables for an object.(Python 将属性的认作是包含实例变量的字典) Python implements the general idea of an operation through a collection of methods or method functions of an object’s class. Note that all Python objects are instances of some class. Additionally, a class also constructs new object instances for us. Once we’ve defined the class, we can then use it as a kind of factory to create new objects.</p>
+<p><strong>Class Definition.</strong>  </p>
+<ul>
+<li>provide a distinct name to the class.</li>
+<li>list the superclasses from which a subclass inherits features. In Python 2, classes should explicitly be defined as subclasses of object. In Python 3, this will be the default. We have multiple inheritance available in Python.</li>
+<li>We provide method functions which define the operations for the class. We define the behavior of each object through its method functions.Note that the attributes of each object are created by an initialization method function (named <code>__init__()</code>) when the object is created.</li>
+<li>We can define attributes as part of the class definition. If we do, these will be class-level attributes, shared by all instances of the class.</li>
+<li>Python provides the required mechanism for unique identity. You can use the id() function to interrogate the unique identifier for each object. </li>
+</ul>
+<p>Technically, a class definition creates a new class object. This Python object contains the definitions of the method functions. Additionally, a class object can also own class-level variables; these are, in effect, attributes which are shared by each individual object of that class.</p>
+<p>We can use this class object to create class instance objects. It’s the instances that do the real work of our programs. The class is simply a template or factory for creating the instance objects.</p>
+<p>Python has a limited mechanism for making a distinction between the <em>defined interface</em> and the <em>private implementation</em> of a class. Python offers two simple techniques for separating interface from implementation.</p>
+<ul>
+<li>We can use a leading ‘_’ on an instance variable or method function name to make it more-or-less private to the class.</li>
+<li>We can use properties or descriptors to create more sophisticated protocols for accessing instance variables. We’ll wait until Attributes, Properties and Descriptors to cover these more advanced techniques. (不明白)</li>
+</ul>
+<p><strong>An Object’s Lifecycle</strong>  Each instance of every class has a lifecycle. The following is typical of most objects.</p>
+<ol>
+<li><strong>Definition</strong>  The class definition is read by the Python interpreter (or it is a built_in class). Class definitions are created by the class statement. Examples of built-in classes include <code>file, str, int,</code> etc.</li>
+<li><strong>Construction</strong>  An instance of the class is constructed: Python allocates(分配) the namespace for the object’s instance variables and associating the object with the class definition. The <code>__init__()</code> method is executed to initialize any attributes of the newly created instance.</li>
+<li><strong>Access and Manipulation</strong>  The instance’s methods are called (similar to function calls we covered in Functions), by client objects or the main script.  There is a considerable amount of collaboration (协作) among objects in most programs. Methods that report on the state of the object are sometimes called <em>accessors</em> (存取器);  methods that change the state of the object are sometimes called <em>mutators or manipulators</em> (操纵器).</li>
+<li><strong>Garbage Collection(碎片回收)</strong>  Eventually, there are no more references to this instance. Typically, the variable (with an object reference) was part of the body of a (function that finished), the namespace is dropped, and the variables no longer exist. Python detects this,  and removes the referenced object from memory, freeing up the storage for subsequent reuse. This freeing of memory is termed <em>garbage collection</em>, and happens automatically. </li>
+</ol>
+<h5 id="2-Class-Definition-The-class-Statement"><a href="#2-Class-Definition-The-class-Statement" class="headerlink" title="2.Class Definition: The class Statement"></a>2.Class Definition: The class Statement</h5><ol>
+<li>We create a class definition with a class statement. We provide the <em>class name</em>, the <em>parent classes</em>, and the <em>method function definitions</em>.</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">name</span> <span class="params">( parent )</span> :</span></div><div class="line">     suite(套)</div></pre></td></tr></table></figure>
+<p>The <code>name</code> is the name of the class, and this name is used to create new objects that are instances of the class. Traditionally, class names are capitalized and class elements (variables and methods) are not capitalized.</p>
+<p>The <code>parent</code> is the name of the parent class, from which this class can inherit attributes and operations. For simple classes, we define the parent as <code>object</code>. Failing to list <code>object</code> as a parent class is not a problem; using object as the superclass does make a few of the built-in functions a little easier to use. In Python 3.0, using object as a parent class will no longer be necessary. In Python 2.6, however, it is highly recommended.</p>
+<p><strong>The <code>suite</code> is a series of function definitions, which define the class.  All of these function definitions must have a first positional argument, <code>self</code>, which Python uses to identify each object’s unique attribute values. The <code>suite</code> can also contain assignment statements which create instance variables and provide default values.</strong>The suite typically begins with a comment string (often a triple-quoted string) that provides basic documentation on the class. This string becomes a special attribute, called <code>__doc__</code>. It is available via the <code>help()</code> function.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> random</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Die</span><span class="params">(object)</span>:</span></div><div class="line"><span class="string">"""Simulate a 6-sided die."""</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">roll</span><span class="params">( self )</span>:</span></div><div class="line">	self.value= random.randint(<span class="number">1</span>,<span class="number">6</span>)</div><div class="line">	<span class="keyword">return</span> self.value</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getValue</span><span class="params">( self )</span>:</span></div><div class="line">	<span class="keyword">return</span> self.value</div></pre></td></tr></table></figure>
+<ol>
+<li>We imported the random module to provide the random number generator.</li>
+<li>We defined the simple class named <code>Die</code>, and claimed it as a subclass of <code>object</code>. The indented suite contains three elements.<ul>
+<li>The doc-string, which provides a simple definition of the real-world thing that this class represents. As with functions, the doc-string is retrieved with the <code>help()</code> function.</li>
+<li>We defined a method function named <code>roll()</code>. This method function has the mandatory positional parameter, <code>self</code>, which is used to qualifty(限定子) the instance variables. The <code>self</code> variable is a namespace for all of the attributes and methods of this object.</li>
+<li>We defined a method function named <code>getValue()</code>. This function will return the last value rolled.</li>
+</ul>
+</li>
+</ol>
+<p>When the <code>roll()</code> method of a <code>Die</code> object is executed, it sets that object’s instance variable, <code>self.value</code>, to a random value. Since the variable name, <code>value</code>, is qualified by the instance variable, <code>self</code>,  the variable is local to the specific instance of the object. If we omitted(省略) the <code>self</code> qualifier, Python would create a variable in the local namespace. The local namespace ceases to exist at the end of the method function execution, removing the local variables.</p>
+<h5 id="3-Creating-and-Using-Objects"><a href="#3-Creating-and-Using-Objects" class="headerlink" title="3.Creating and Using Objects"></a>3.Creating and Using Objects</h5><p>Once we have a class definition, we can make objects which are instances of that class. We do this by evaluating the class as if it were a function:  for example, ‘<code>Die()</code>’. When we make one of these class calls, two things will happen.</p>
+<ul>
+<li><p>A new object is created. This object has a reference to its class definition.</p>
+</li>
+<li><p>The object’s initializer method, <code>__init__()</code>, is called. We’ll look at how you define this method function in the next section.</p>
+</li>
+</ul>
+<p>Let’s create two instances of our <code>Die</code>class.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>d1= Die()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d2= Die()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d1.roll(), d2.roll()</div><div class="line">(<span class="number">6</span>, <span class="number">5</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d1.getValue(), d2.getValue()</div><div class="line">(<span class="number">6</span>, <span class="number">5</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d1, d2</div><div class="line">(&lt;__main__.Die object at <span class="number">0x607bb0</span>&gt;, &lt;__main__.Die object at <span class="number">0x607b10</span>&gt;)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d1.roll(), d2.roll()</div><div class="line">(<span class="number">1</span>, <span class="number">3</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d1.value, d2.value</div><div class="line">(<span class="number">1</span>, <span class="number">3</span>)</div></pre></td></tr></table></figure>
+<ol>
+<li>We use the Die class object to create two variables, <code>d1</code>, and <code>d2</code>;  both are new objects, instances of <code>Die</code>.</li>
+<li>We evaluate the <code>roll()</code> method of <code>d1</code>; ; we also evaluate the <code>roll()</code> method of <code>d2</code>. Each of these calls sets the object’s <code>value</code> variable to a unique, random number. There’s a pretty good chance  (1 in 6) that both values might happen to be the same. If they are, simply call ‘<code>d1.roll()</code>’ and ‘<code>d2.roll()</code>’ again to get new values.</li>
+<li>We evaluate the <code>getValue()</code> method of each object. The results aren’t too surprising, since the value attribute was set by the <code>roll()</code> method. This attribute will be changed the next time we call the <code>roll()</code> method.</li>
+<li>We also ask for a representation of each object. If we provide a method named <code>__str__()</code> in our class, that method is used; otherwise Python shows the memory address associated with the object. All we can see is that the numbers are different, indicating that these instances are distinct objects.</li>
+</ol>
+<h5 id="4-Special-Method-Names"><a href="#4-Special-Method-Names" class="headerlink" title="4. Special Method Names"></a>4. Special Method Names</h5><p>There are several special methods that are essential to the implementation of a class. Each of them has a name that begins and ends with double underscores. These method names are used implicitly by Python. we’ll look at a few special method names that are used heavily.</p>
+<p><strong><code>__init__(self, ...)</code></strong></p>
+<p>The <code>__init__()</code> method of a class is called by Python to initialize a newly-created object.Note that The <code>__init__()</code> method can accept parameters, but does not return anything.  It sets the internal state(内部状态) of the object.</p>
+<p><strong><code>__str__(self)</code></strong></p>
+<p>The <code>__str__()</code> method of a class is called whenever Python needs a string representation of an object. This is the method used by the <code>str()</code> built-in function. When printing an object, the <code>str()</code> is called implicitly to get the value that is printed.</p>
+<p><strong><code>__repr__(self )</code></strong></p>
+<p>The <code>__repr__()</code> method of a class is used when we want to see the details of an object’s values. This method is used by the <code>repr()</code> function.</p>
+<p><strong>Initializing an Object with <code>__init__()</code>.</strong>  When you create an object, Python will both create the object and also call the object’s <code>__init__()</code> method. This method function can create the object’s instance variables and perform any other one-time initialization. There are, typically, two kinds of instance variables that are created by the <code>__init__()</code> method:  variables based on parameters and variables that are independent of any parameters.</p>
+<p>Here’s an example of a company description that might be suitable for evaluating stock performance. In this example, all of the instance variables (self.name, self.symbol, self.price) are based on parameters to the <code>__init__()</code> method.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Company</span><span class="params">( object )</span>:</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">( self, name, symbol, stockPrice )</span>:</span></div><div class="line">	self.name= name</div><div class="line">	self.symbol= symbol</div><div class="line">	self.price= stockPrice</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">valueOf</span><span class="params">( self, shares )</span>:</span></div><div class="line">	<span class="keyword">return</span> shares * self.price</div></pre></td></tr></table></figure>
+<p>When we create an instance of Company, we use code like this.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c1= Company( <span class="string">"General Electric"</span>, <span class="string">"GE"</span>, <span class="number">30.125</span> )</div></pre></td></tr></table></figure>
+<p>This will provide three values to the parameters of <code>__init__()</code>.</p>
+<p><strong>String value of an object with <code>__str__()</code>.</strong>  The <code>__str__()</code> method function is called whenever an instance of a class needs to be converted to a string. Typically, this occus when use the <code>str()</code> function on an object. Also, when we reference object in a print statement, the <code>str()</code> function is evaluated. Consider this definition of the class <code>Card</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Card</span><span class="params">( object )</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">( self, rank, suit )</span>:</span></div><div class="line">		self.rank= rank</div><div class="line">		self.suit= suit</div><div class="line">		self.points= rank</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">hard</span><span class="params">( self )</span>:</span></div><div class="line">		<span class="keyword">return</span> self.points</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">soft</span><span class="params">( self )</span>:</span></div><div class="line">		<span class="keyword">return</span> self.points</div></pre></td></tr></table></figure>
+<p>When we try to print an instance of the class, we get something like the following.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>c = Card( <span class="number">3</span>, <span class="string">"D"</span> )</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>c</div><div class="line">&lt;__main__.Card object at <span class="number">0x607fb0</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>str(c)</div><div class="line"><span class="string">'&lt;__main__.Card object at 0x607fb0&gt;'</span></div></pre></td></tr></table></figure>
+<p>This is the default behavior for the <code>__str__()</code> method. We can, however, override this with a function that produces a more useful-looking result.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">( self )</span>:</span></div><div class="line">	<span class="keyword">return</span> <span class="string">"%2d%s"</span> % (self.rank, self.suit)</div></pre></td></tr></table></figure>
+<p>Adding this method function converts the current value of the die to a string and returns this. Now we get something much more useful.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>d = Card( <span class="number">4</span>, <span class="string">"D"</span> )</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d</div><div class="line">&lt;__main__.Card object at <span class="number">0x607ed0</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>str(d)</div><div class="line"><span class="string">' 4D'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> d</div><div class="line"><span class="number">4</span>D</div></pre></td></tr></table></figure>
+<p><strong>Representation detail with <code>__repr__()</code>.</strong>  While the <code>__str__()</code> method produces a human-readable string, we sometimes want the nitty-gritty details. The <code>__repr__()</code> method function is evaluated whenever an instance of a class must have its detailed representation shown. This is usually done in response to evaluating the <code>repr()</code> function. Examples include the following:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>repr(c)</div><div class="line"><span class="string">'&lt;__main__.Card object at 0x607fb0&gt;'</span></div></pre></td></tr></table></figure>
+<p>If we would like to produce a more useful result, we can override the <code>__repr__()</code> function. The objective is to produce a piece of Python programming that would reconstruct the original object.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">( self )</span>:</span></div><div class="line">	<span class="keyword">return</span> <span class="string">"Card(%d,%r)"</span> % (self.rank,self.suit)</div></pre></td></tr></table></figure>
+<p>We use <code>__repr__()</code> to produce a clear definition of how to recreate the given object.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>c = Card( <span class="number">5</span>, <span class="string">"D"</span> )</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>repr(c)</div><div class="line"><span class="string">"Card(5,'D')"</span></div></pre></td></tr></table></figure>
+<p><strong>Special Attribute Names.</strong> In addition to the special method names, each object has a number of  special attributes. </p>
+<p>We’ll look at just a few, including <code>__dict__</code>, <code>__class__</code> and <code>__doc__</code>.</p>
+<p><code>__dict__</code> The attribute variables of a class instance are kept in a special dictionary object named <code>__dict__</code>. As a consequence, when you say <code>self.attribute= value</code>, this has almost identical meaning to <code>self.__dict__[&#39;attribute&#39;]= value</code>. Combined with the % string formatting operation, this feature is handy for writing <code>__str__()</code> and <code>__repr__()</code> functions.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">( self )</span>:</span></div><div class="line">	<span class="keyword">return</span> <span class="string">"%(rank)2s%(suit)s"</span> % self.__dict__</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">( self )</span>:</span></div><div class="line">	<span class="keyword">return</span> <span class="string">"Card(%(rank)r,%(suit)r)"</span> % self.__dict__</div></pre></td></tr></table></figure>
+<p><code>__class__</code> This is the class to which the object belongs.</p>
+<p><code>__doc__</code> The doc_string from the class definition.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/14/18-1-13python/" rel="next" title="关于2D绕柱流的Lattice Boltzmann Method">
+                <i class="fa fa-chevron-left"></i> 关于2D绕柱流的Lattice Boltzmann Method
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="PLANET" />
+          <p class="site-author-name" itemprop="name">PLANET</p>
+           
+              <p class="site-description motion-element" itemprop="description">小白的自留地</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chinazzk" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/chinazzk" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2416267827/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://notes.iissnan.com/" title="iissnan" target="_blank">iissnan</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=86 height=86 src="//music.163.com/outchain/player?type=2&id=3301896&auto=0&height=66"></iframe>
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#CLASSES"><span class="nav-number">1.</span> <span class="nav-text">CLASSES</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-Semantics"><span class="nav-number">2.</span> <span class="nav-text">1.Semantics</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-Class-Definition-The-class-Statement"><span class="nav-number">3.</span> <span class="nav-text">2.Class Definition: The class Statement</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Creating-and-Using-Objects"><span class="nav-number">4.</span> <span class="nav-text">3.Creating and Using Objects</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-Special-Method-Names"><span class="nav-number">5.</span> <span class="nav-text">4. Special Method Names</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">PLANET</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 90807, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 90807, xid: "2018/01/20/18-1-20python-class/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/90807/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("dhWDIGOrbezT2ktwxx683oqD-gzGzoHsz", "jAte7NKA18Fmco4h8TktxD46");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
