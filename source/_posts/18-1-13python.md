@@ -82,7 +82,7 @@ i2 = arange(q)[asarray([ci[0]==0 for ci in c])]
 # Unknown on left wall.[6 7 8]
 i3 = arange(q)[asarray([ci[0]>0  for ci in c])] 
 ```
-![1](E:\blog.zzk\pictures\velocity.png)
+![1](http://opy4d6q9k.bkt.clouddn.com/velocity.png)
 
 **Function Definitions**
 ```python
@@ -176,5 +176,33 @@ $\rho \_w=\frac{1}{1-u_w}[f_0+f_1+f_2+2(f_3+f_4+f_5)]$
 ```python
 # Left wall: Zou/He boundary condition.
 feq = equilibrium(rho,u) # 通过式计算feq
-fin[i3,0,:] = fin[i1,0,:] + feq[i3,0,:] - fin[i1,0,:] # 存疑？
+fin[i3,0,:] = feq[i3,0,:]  # Equiulibrium Scheme
+```
+$f_i(x_b,t)=f_i^{eq}(\rho_w,u_w)$
+
+```python
+# Collision step.
+fout = fin - omega * (fin - feq)  
+for i in range(q): fout[i,obstacle] = fin[noslip[i],obstacle]    #  障碍物处不计算
+```
+
+$f_k(x,y,t+\Delta t)=f_k(x,y,t)-\omega [f_k^{eq}(x,y,t)-f_k(x,y,t)]$
+
+```python
+# Streaming step.
+for i in range(q): 
+    #  先按行移动，再按列移动
+    fin[i,:,:] = roll(roll(fout[i,:,:],c[i,0],axis=0),c[i,1],axis=1)  
+```
+
+$f_k(x+\Delta x,y+\Delta y,t+\Delta t)=f_k(x,y,t+\Delta t)$
+
+```python
+# Visualization 输出图像
+if (time%100==0): 
+    plt.clf() #清理当前figure
+    # imshow() 将numpy array 绘制成image
+    plt.imshow(sqrt(u[0]**2+u[1]**2).transpose(),cmap=cm.Reds)
+    # str().zfill(width) 使用零填充字符串width 是字符串最终的宽度
+    plt.savefig("vel."+str(time/100).zfill(4)+".png")
 ```
