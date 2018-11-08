@@ -82,7 +82,8 @@ class Domain(object):
 >>> filename='mesh_for_lbmtest.txt' 
 ```
 在当前工作目录下新建文本如下
-![1](http://opy4d6q9k.bkt.clouddn.com/1111.png)
+![lbm示例1.PNG](https://i.loli.net/2018/11/08/5be4550f2e20c.png)
+
 ```python
 >>> mesh_lines = mesh_file.readlines()
 >>> print(mesh_lines)
@@ -325,7 +326,7 @@ In the inputfile "lu_x": 0.0001
 >>> mesh_file.close()
 ```
 生成如下文件
-![2](http://opy4d6q9k.bkt.clouddn.com/1112.png)
+![lbm示例2.PNG](https://i.loli.net/2018/11/08/5be455589ab3a.png)
 
 *end of example*
 
@@ -766,7 +767,7 @@ class Inputfile(object):
 
 读取如下格式的输入文件
 
-![2](http://opy4d6q9k.bkt.clouddn.com/1113.png)
+![lbm示例3.PNG](https://i.loli.net/2018/11/08/5be455af2ba9c.png)
 
 ```python
 >>> import json
@@ -1271,8 +1272,7 @@ def apply_boundaries(domain, lattice, bnd_ux):
 **example**
 
 
-
-![](http://opy4d6q9k.bkt.clouddn.com/1114.png)
+![lbm示例4.PNG](https://i.loli.net/2018/11/08/5be4565493fe1.png)
 
 Wet-Node Approach:
 
@@ -1292,7 +1292,8 @@ Non equilibrium extrapolation method
 
 $$f_i(\vec x_b,t) =f_i^{eq}(\rho _w, \vec u_w)+(f_i(\vec x _f,t)-f_i^{eq}(\rho _f,\vec u_f))$$
 
-![](http://opy4d6q9k.bkt.clouddn.com/1115.png)
+
+![lbm示例5.PNG](https://i.loli.net/2018/11/08/5be456bd27ede.png)
 
 
 

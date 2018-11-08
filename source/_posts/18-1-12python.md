@@ -6,7 +6,7 @@ tags:
    - python
 mathjax: true
 ---
-关于数组的一些“芝士”
+关于数组转置的一些操作理解
 <!--  more -->
 **矩阵(matrix)**
 矩阵更多的是一个数学上的概念，看维基百科的解释
@@ -99,9 +99,8 @@ c = array([(x,y) for x in [0,-1,1] for y in [0,-1,1]])
 arr1是2\*2\*4维数组；transpose(0,1,2)中的0,1,2分别表示三种维度(2,2,4)
 
 transpose(1,0,2)表示原第一维度与原第二维度**转置**第三维度保持不变
-![1](http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B71.PNG)
+![捕获1.PNG](https://i.loli.net/2018/11/08/5be4532a39771.png)
 transpose(0,2,1)表示原第二维度与原第三维度**转置**第一维度保持不变
-![2](http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B72.PNG)
+![捕获2.PNG](https://i.loli.net/2018/11/08/5be4532b0a3d5.png)
 transpose(2,1,0)表示原第一维度与原第三维度**转置**第二维度保持不变
-![3](http://opy4d6q9k.bkt.clouddn.com/%E6%8D%95%E8%8E%B73.PNG)
-
+![捕获3.PNG](https://i.loli.net/2018/11/08/5be4532b2014c.png)
