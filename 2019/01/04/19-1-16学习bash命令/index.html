@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="Git Bash 中可执行Shell 脚本的命令  Bash 类似编译器作用 全称  ‘Bourne-Again SHell’Shell 可以看成是编程语言。这里是对个人使用的一些命令及相应语句的记录。&amp;lt;! – more –&amp;gt; ls  -la 显示当前文件夹的内容 或者 ls -la [文件名] 显示指定文件信息echo 命令用于向窗口输出文本cat  [文件名]  显示文件中的内容c">
+<meta name="description" content="Git Bash 中可执行Shell 脚本的命令  Bash 类似编译器作用 全称  ‘Bourne-Again SHell’Shell 可以看成是编程语言。这里是对个人使用的一些命令及相应语句的记录。">
 <meta name="keywords" content="Bash,Shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shell 常用命令学习">
 <meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2019/01/04/19-1-16学习bash命令/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
-<meta property="og:description" content="Git Bash 中可执行Shell 脚本的命令  Bash 类似编译器作用 全称  ‘Bourne-Again SHell’Shell 可以看成是编程语言。这里是对个人使用的一些命令及相应语句的记录。&amp;lt;! – more –&amp;gt; ls  -la 显示当前文件夹的内容 或者 ls -la [文件名] 显示指定文件信息echo 命令用于向窗口输出文本cat  [文件名]  显示文件中的内容c">
-<meta property="og:updated_time" content="2019-01-16T08:14:44.371Z">
+<meta property="og:description" content="Git Bash 中可执行Shell 脚本的命令  Bash 类似编译器作用 全称  ‘Bourne-Again SHell’Shell 可以看成是编程语言。这里是对个人使用的一些命令及相应语句的记录。">
+<meta property="og:updated_time" content="2019-01-16T08:21:12.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell 常用命令学习">
-<meta name="twitter:description" content="Git Bash 中可执行Shell 脚本的命令  Bash 类似编译器作用 全称  ‘Bourne-Again SHell’Shell 可以看成是编程语言。这里是对个人使用的一些命令及相应语句的记录。&amp;lt;! – more –&amp;gt; ls  -la 显示当前文件夹的内容 或者 ls -la [文件名] 显示指定文件信息echo 命令用于向窗口输出文本cat  [文件名]  显示文件中的内容c">
+<meta name="twitter:description" content="Git Bash 中可执行Shell 脚本的命令  Bash 类似编译器作用 全称  ‘Bourne-Again SHell’Shell 可以看成是编程语言。这里是对个人使用的一些命令及相应语句的记录。">
 
 
 
@@ -408,8 +408,9 @@
       
 
       
-        <p>Git Bash 中可执行Shell 脚本的命令  Bash 类似编译器作用 全称  ‘Bourne-Again SHell’<br>Shell 可以看成是编程语言。这里是对个人使用的一些命令及相应语句的记录。<br>&lt;! – more –&gt;</p>
-<p><u>ls  -la</u> 显示当前文件夹的内容 或者 <u>ls -la [文件名]</u> 显示指定文件信息<br><u>echo</u> 命令用于向窗口输出文本<br><u>cat  [文件名]</u>  显示文件中的内容<br><u>chmod +x  ./[文件名]</u>  使得<u>./[文件名]</u>具有 执行权限<br><u>[命令or脚本or可执行程序]\&lt;\<tag< u="">  将脚本内开始标记tag 和结束标记tag 之间的内容作为输入<br><u>./abc.exe</u>  执行 abc.exe 可执行程序<br>sed命令<br><u>sed -i “1c hi”  text.dat</u>  # 将文件名为test.dat的第一行替代为hi, 多行如何替换？<br>我的第一个循环脚本<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">for ((i=1;i&lt;=10;i++)) # 执行10次</div><div class="line">do</div><div class="line"><span class="meta">	#</span> 变量赋值时,变量名与变量之间不能存在空格,引用变量:$&#123;变量名&#125;</div><div class="line">	line2_name="OPEN/CLOSE K_field_0.1_$&#123;i&#125;X.dat  1 (FREE) 1" </div><div class="line">	sed -i "6c $&#123;line2_name&#125;" NGTT.bcf</div><div class="line">	line1_name="DATA(BINARY) 63 NGTT_$&#123;i&#125;.BGT"</div><div class="line">	sed -i "23c $&#123;line1_name&#125;" NaturalGradientTraceTest.nam</div><div class="line"><span class="meta">	#</span> 执行 mf96.exe 并输入 NaturalGradientTraceTest.nam</div><div class="line">	./mf96.exe NaturalGradientTraceTest.nam</div><div class="line">done</div></pre></td></tr></table></figure></tag<></u></p>
+        <p>Git Bash 中可执行Shell 脚本的命令  Bash 类似编译器作用 全称  ‘Bourne-Again SHell’<br>Shell 可以看成是编程语言。这里是对个人使用的一些命令及相应语句的记录。<br><a id="more"></a></p>
+<p><u>ls  -la</u> 显示当前文件夹的内容 或者 <u>ls -la [文件名]</u> 显示指定文件信息<br><u>echo</u> 命令用于向窗口输出文本<br><u>cat  [文件名]</u>  显示文件中的内容<br><u>chmod +x  ./[文件名]</u>  使得<u>./[文件名]</u>具有 执行权限<br><u>[命令or脚本or可执行程序]\&lt;\<tag< u="">  将脚本内开始标记tag 和结束标记tag 之间的内容作为输入<br><u>./abc.exe</u>  执行 abc.exe 可执行程序<br>sed命令<br><u>sed -i “1c hi”  text.dat</u>  # 将文件名为test.dat的第一行替代为hi, 多行如何替换？<br>我的第一个循环脚本</tag<></u></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">for ((i=1;i&lt;=10;i++)) # 执行10次</div><div class="line">do</div><div class="line"><span class="meta">	#</span> 变量赋值时,变量名与变量之间不能存在空格,引用变量:$&#123;变量名&#125;</div><div class="line">	line2_name="OPEN/CLOSE K_field_0.1_$&#123;i&#125;X.dat  1 (FREE) 1" </div><div class="line">	sed -i "6c $&#123;line2_name&#125;" NGTT.bcf</div><div class="line">	line1_name="DATA(BINARY) 63 NGTT_$&#123;i&#125;.BGT"</div><div class="line">	sed -i "23c $&#123;line1_name&#125;" NaturalGradientTraceTest.nam</div><div class="line"><span class="meta">	#</span> 执行 mf96.exe 并输入 NaturalGradientTraceTest.nam</div><div class="line">	./mf96.exe NaturalGradientTraceTest.nam</div><div class="line">done</div></pre></td></tr></table></figure>
 <p><u>touch “文件名”</u>  #创建文件<br><u>rm -if “文件名”</u>   #删除文件<br><u>command1 | command2</u> 这里的“|” 是把第一个命令的执行结果作为第二个命令的输入<br><u>sed -n 23p rw3d.dat | awk -F “ “ ‘{print $3}’</u> 这里是读取文件rw3d.dat 中的第23行，第三列内容，列以空格分开<br><u>awk ‘NR==23 {print $3}’ rw3d.dat</u> 与上一行命令的作用一致</p>
 <p>第二个循环脚本</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">for ((i=1;i&lt;=500;i++)) # 执行500次</div><div class="line">do</div><div class="line"><span class="meta">	#</span> 变量名与变量之间不能存在空格</div><div class="line">	line1_name="NGTT_$&#123;i&#125;.BGT   1.0  1 	 2 " </div><div class="line">	sed -i "34c $&#123;line1_name&#125;" rw3d_example.inp</div><div class="line">	sed -i "35c $&#123;line1_name&#125;" rw3d_example.inp</div><div class="line">	sed -i "36c $&#123;line1_name&#125;" rw3d_example.inp</div><div class="line">	line2_name="rw3d_cart_spat_mom_$&#123;i&#125;.dat"</div><div class="line">	line3_name="rw3d_temp_mom_$&#123;i&#125;.dat"</div><div class="line">	line4_name="rw3d_plane_dispersivity_$&#123;i&#125;.dat"</div><div class="line">	sed -i "8c $&#123;line2_name&#125;" rw3d.nam</div><div class="line">	sed -i "13c $&#123;line3_name&#125;" rw3d.nam</div><div class="line">	sed -i "14c $&#123;line4_name&#125;" rw3d.nam</div><div class="line">	./RW3D_Sep_29.exe</div><div class="line">done</div></pre></td></tr></table></figure>
@@ -459,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/15/2018-3-15/" rel="next" title="No local dispersion stochastic analysis base on Miralies-Wilhelm(1996)">
-                <i class="fa fa-chevron-left"></i> No local dispersion stochastic analysis base on Miralies-Wilhelm(1996)
+              <a href="/2018/03/15/2018-3-15Reading Dentz(2012)/" rel="next" title="Reading Dentz(2012)">
+                <i class="fa fa-chevron-left"></i> Reading Dentz(2012)
               </a>
             
           </div>
