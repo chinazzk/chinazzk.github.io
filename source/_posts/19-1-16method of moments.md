@@ -12,9 +12,7 @@ pick out from "Salamon, P., Fernàndez-Garcia, D., & Gómez-Hernández, J. J. (2
 <!-- more -->
 **Method of moments**
 method of moments developed by Aris(1956)^1^ is used to evaluate numerical simulations.
-the spatial moments serve as a simple, physical meaningful description of overall plume behavior.
-The zeroth moment represents the total solute mass contained in the plume, the first moment measures the location of the center of mass of the plume and the second moment corresponds to the spreading of the plume around the center of mass.
-the general formula to calculate the spatial moments of a plume is given as
+the spatial moments serve as a simple, physical meaningful description of overall plume behavior. The zeroth moment represents the total solute mass contained in the plume, the first moment measures the location of the center of mass of the plume and the second moment corresponds to the spreading of the plume around the center of mass. the general formula to calculate the spatial moments of a plume is given as
 $$
 M_p(t) = 
 \int \int \int _{-\infty} ^{\infty} n x^p c(x,y,z,t) dx dy dz
@@ -58,10 +56,7 @@ Apparent parameters are viewed as equivalent values in homogeneous porous media,
 
 **Temporal moments (breakthrough curves)**
 
-"Fernàndez-Garcia, D., Illangasekare, 
-T. H., & Rajaram, H. (2005). Differences in the scale-dependence of 
-dispersivity estimated from temporal and spatial moments in chemically 
-and physically heterogeneous porous media. *Advances in water resources*, *28*(7), 745-759."
+"Fernàndez-Garcia, D., Illangasekare, T. H., & Rajaram, H. (2005). Differences in the scale-dependence of dispersivity estimated from temporal and spatial moments in chemically and physically heterogeneous porous media. *Advances in water resources*, *28*(7), 745-759."
 
 Temporal moments associated with observed BTCs at several predefined control planes were computed using a Lagrangian framework.
 
@@ -100,12 +95,10 @@ $$
 A_{11}(\xi _p) = \dfrac{\xi _p} {2} 
 \dfrac{M_{T,2}(\xi _p)} { (\mu_1^{'}(\xi _p))^2}
 $$
-"Fernàndez‐Garcia, D., & 
-Gómez‐Hernández, J. J. (2007). Impact of upscaling on solute transport: 
-Traveltimes, scale dependence of dispersivity, and propagation of 
-uncertainty. *Water Resources Research*, *43*(2)."
+"Fernàndez‐Garcia, D., & Gómez‐Hernández, J. J. (2007). Impact of upscaling on solute transport: Travel times, scale dependence of dispersivity, and propagation of uncertainty. *Water Resources Research*, *43*(2)."
 
 T_a is the mean arrival time for a given realization $\sigma _t ^2$ is the variance of travel times for a given realization
+
 $$
 T_a(x) \approx \dfrac{1}{M_a} 
 \sum _{k=1} ^{NP_a} m_p^{(k)} t_p^{(k)}(x)
@@ -114,6 +107,7 @@ T_a(x) \approx \dfrac{1}{M_a}
 \dfrac{1}{M_a} \sum _{k=1} ^{NP_a} m_p^{(k)} (t_p^{(k)}(x))^2 
 - (T_a(x))^2
 $$
+
 equivalent dispersivities
 $$
 A_L^b(x_c) = \dfrac{L}{2} 
