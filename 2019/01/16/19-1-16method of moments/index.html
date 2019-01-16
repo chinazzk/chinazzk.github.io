@@ -99,7 +99,7 @@
 <meta property="og:url" content="https://github.com/chinazzk/chinazzk.github.io/2019/01/16/19-1-16method of moments/index.html">
 <meta property="og:site_name" content="ALL YOU WANT IS TOO MUCH">
 <meta property="og:description" content="pick out from “Salamon, P., Fernàndez-Garcia, D., &amp;amp; Gómez-Hernández, J. J. (2006). A review and numerical assessment of the random walk particle tracking method. Journal of contaminant hydrology,">
-<meta property="og:updated_time" content="2019-01-16T10:56:17.858Z">
+<meta property="og:updated_time" content="2019-01-16T11:03:59.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Method of moments">
 <meta name="twitter:description" content="pick out from “Salamon, P., Fernàndez-Garcia, D., &amp;amp; Gómez-Hernández, J. J. (2006). A review and numerical assessment of the random walk particle tracking method. Journal of contaminant hydrology,">
@@ -416,10 +416,7 @@
 <p>n-th absolute temporal moment can be calculated as the expected value of the arrival time of a particle at the control plane to the n-th power<br>$$<br>\mu _n ^{‘} (x_1)=<br>\dfrac{1}{m_{tot}}<br>\int _0 ^{\infty} t^n Q C_f(x_1,t) dt<br>\approx \dfrac{1}{m_{tot}}<br>\sum _{k=1} ^{NP_a} m_p^{(k)} (t_p^{(k)}(x_1))^{n}<br>\\<br>m_{tot}= \sum _{k=1} ^{NP_a} m_p ^{(k)}<br>$$<br>Q is the total water flux passing through the control plane. x_1 is the mean flow direction coordinate.C_f is the flux concentration of solute passing through a given surface. t_p^{(k)} is the first arrival passage time of the k-th particle, m_tot is the total mass injected, and NP_a is the total number of particles arrived at the x_1 control plane. $ \dfrac{QC_f(x_1,t)}{m_{tot}} $ is the rate of solute mass passing through the x_1 control plane at time t normalized by the total mass injected, which is the probability density function for the mass flux.</p>
 <p>The n-th central temporal moment is calculated using the relationship between central and absolute temporal moments<br>$$<br>\begin{align}<br>M_{T,n(x_1)} &amp;= \dfrac{1}{m_{tot}}<br>\int<br>\left( t-\mu_1 ^{‘}(x_1)<br>\right)^n<br>QC_f(x_1,t) dt<br>\\<br>&amp;=\sum _{r=0}^{n}<br>\left(<br>\begin{matrix}<br>n\\r<br>\end{matrix}<br>\right)<br>\mu _{n-r}^{‘}(x_1) (-\mu _1^{‘}(x_1))^r<br>\end{align}<br>$$<br>dispersivities from temporal moments were calculated as<br>$$<br>A_{11}(\xi _p) = \dfrac{\xi _p} {2}<br>\dfrac{M_{T,2}(\xi _p)} { (\mu_1^{‘}(\xi _p))^2}<br>$$<br>“Fernàndez‐Garcia, D., &amp; Gómez‐Hernández, J. J. (2007). Impact of upscaling on solute transport: Travel times, scale dependence of dispersivity, and propagation of uncertainty. <em>Water Resources Research</em>, <em>43</em>(2).”</p>
 <p>T_a is the mean arrival time for a given realization $\sigma _t ^2$ is the variance of travel times for a given realization</p>
-<p>$$<br>T_a(x) \approx \dfrac{1}{M_a}<br>\sum _{k=1} ^{NP_a} m_p^{(k)} t_p^{(k)}(x)<br>\\<br>\sigma _t ^2(x) \approx<br>\dfrac{1}{M_a} \sum _{k=1} ^{NP_a} m_p^{(k)} (t_p^{(k)}(x))^2 </p>
-<ul>
-<li>(T_a(x))^2<br>$$</li>
-</ul>
+<p>$$<br>T_a(x) \approx \dfrac{1}{M_a}<br>\sum _{k=1} ^{NP_a} m_p^{(k)} t_p^{(k)}(x)<br>\\<br>\sigma _t ^2(x) \approx<br>\dfrac{1}{M_a}<br>\sum _{k=1} ^{NP_a} m_p^{(k)} (t_p^{(k)}(x))^2-(T_a(x))^2<br>$$</p>
 <p>equivalent dispersivities<br>$$<br>A_L^b(x_c) = \dfrac{L}{2}<br>\dfrac{\sigma _t ^2(x)}{T_a^2}-a_L<br>$$<br>x_c denotes the centroid location of the grid block. L is the size of the block in the mean flow direction. First passage times of particles exiting the grid block are used to estimate the mass flux breakthrough curve.</p>
 
       
