@@ -104,8 +104,8 @@ T_a(x) \approx \dfrac{1}{M_a}
 \sum _{k=1} ^{NP_a} m_p^{(k)} t_p^{(k)}(x)
 \\
 \sigma _t ^2(x) \approx 
-\dfrac{1}{M_a} \sum _{k=1} ^{NP_a} m_p^{(k)} (t_p^{(k)}(x))^2 
-- (T_a(x))^2
+\dfrac{1}{M_a} 
+\sum _{k=1} ^{NP_a} m_p^{(k)} (t_p^{(k)}(x))^2-(T_a(x))^2
 $$
 
 equivalent dispersivities
